@@ -1,0 +1,415 @@
+\chapter{Related work}
+\label{chapter:related-work}
+
+% Advances in digital fabrication and the growing availability of fabrication machines accelerated the research in many areas. They allowed the exploration of custom 3D objects that can sense user input,  
+
+% recent advances in fabrication technology enabled lots of stuff; availability of simple printers (FDM, SLA) people making stuff, multi-material printers enabled customized stuff like prosthetics, nanoscale printers enabled even new materials. this is the related work that this work builds on.
+
+Our work builds on previous work in interactive personal fabrication,  on techniques that modify the internal structure of 3D printed objects, multi-material printing, and in particular on mechanical metamaterials.
+
+
+
+
+
+\section{Interactive systems for fabrication}
+
+Personal fabrication devices such as 3D printers and laser cutters allow users to fabricate personalized physical objects. Researches presented interactive systems that ease the process of designing static objects, creating interactive objects and interacting directly with the machine.
+
+% Besides fabricating common decorative objects from rigid plastic, researchers presented systems for creating interactive objects, or interacting directly with the machine \cite{Baudisch2017}.
+
+% researchers showed how to fabricate a variety of objects, such as printing soft teddy bears \cite{Hudson2014}, optical sensors \cite{Willis2012}, or loudspeakers \cite{Ishiguro2014}.
+
+
+\subsection{Designing 3D models}
+
+% As the market for additive manufacturing (3D printing) is growing \cite{Sclupteo2018}, not only the hardware, but also the software to create the 3D model is 
+
+The first step to fabricating custom object using 3D printing is to design the digital 3D model. There are many tools to do so, the currently most popular tools include easy-to-use CAD systems such as Tinkercad or SketchUp, expert tools such as SolidWorks and Inventor, or parametric modelling tools such as Rhinoceros or openSCAD \cite{imaterialise2017}. 
+
+Researchers in HCI and computer graphics investigated systems to ease the process of creating 3D models, e.g., by implementing sketching-based interfaces for simple toy-like models \cite{Igarashi1999}, or for more complex models such as planes  \cite{Tsang2004, Bae2008, Bae2009}. Going beyond creating only the virtual model, researchers integrated the fabrication of the physical model into the design system by simulating the, e.g., sown plush model \cite{Mori2007} or stability of the interlocked laser cut chair \cite{Saul2011}. In general, making 3D objects from laser cut 2D shapes by interlocking them orthogonally is popular, since laser cutting is simpler and faster than 3D printing. Researchers support these benefits of laser cutting and develop systems that create laser cut pieces from a 3D model \cite{Hildebrand2012, McCrae2014}.
+
+More complex mechanical object and articulated figures, rather than the aforementioned static object, require special items such as joints \cite{Ureta2016} and user-defined motion-ranges \cite{Megaro2014}. LinkEdit \cite{Bacher2015} allows users to edit the moving linkage as to satisfy space constraints. Megaro et al. \cite{Megaro2015} take this concept event further and implement as systems that generates stable motions for legged robots of arbitrary designs and exports the 3D-printable geometry.
+
+
+\subsection{Interacting with the machine}
+
+The traditional workflow for fabricating physical models consists of users creating the 3D model at their computer, then sending the model to the fabrication machine and waiting until the machine is done. In case of 3D printing, this could mean waiting for hours -- days until the object is finished. However, when fit or ergonomics is an issue, this process is not feasible as it does not allow for iterating over the design. Achieving a good fit between the fabricated object and external object, Weichel et al. \cite{Weichel2014, Weichel2015} proposed using the target objects in an AR environment during the modeling process. Gannon et al. \cite{Gannon2015} investigated a fabrication system that allows users to design directly on their skin for body-fit items such as casts.
+
+The availability to iterate over a design is crucial for rapid prototyping, which is why researcher investigated how to decrease the time between iterations. This includes integrating building blocks \cite{Mueller2014}, printing only low-fidelity previews \cite{Mueller2014a}, or destroying only part of the model for updating instead of reprinting the whole part \cite{Teibrich2015}. \textit{On-the-Fly Print} \cite{Peng2016} even allows users to design 3D models digitally while having a low-fidelity physical wireframe model printed in parallel. 
+
+% \cite{Roumen2016} Mobile Fabrication
+
+Going beyond quick iterations cycles, researchers investigated interactive systems that allows users to interact directly on the machine. This powerful concept was first instantiated by a foam extruder that was integrated with a touch-table \cite{Willis2011a}. Extending this concept, Müller et al. investigated systems that allow users to draw mechanical parts directly onto the laser cutter \cite{Mueller2012a, Mueller2013}. This makes the machine a collaborator, which was taken further by systems, such as \textit{FormFab} \cite{Baudisch2017} or \textit{RoMA} \cite{Peng2018} that enable a collaboration with a robotic arm for fabrication.
+
+Working directly on the machine also presents another way to creating the digital 3D model. \textit{D-Coil} \cite{Peng2015a}, for example, allows users to create a physical model using a handheld extruder and creates the digital model by tracking the extruder's movements. 
+
+% \cite{Weichel2015} - ReForm: Integrating Physical and Digital Design through Bidirectional Fabrication
+% \cite{Follmer2012} - KidCAD
+
+
+\subsection{Interactive objects and unconventional materials}
+
+Researchers did not only investigate how to create interactive fabrication systems, but also how to fabricate interactive objects. One way is to achieve interactive objects is to create systems that allow users to define space inside the object to include electronic components, such as microcontroller boards \cite{Weichel2013}, mobile devices \cite{Ledo2017}, or electro-luminescent wire \cite{Savage2014}. Using conductive filaments, users can add capacitive sensing capabilities to their 3D printed objects \cite{Schmitz2017, Burstyn2015, Vasilevitsky2016, Katsumoto2013}. Researchers also integrated other sensing technologies into 3D printed objects, including pneumatic sensing \cite{Savage2014, Slyper2012, He2017}, acoustic sensing \cite{Savage2015}, or optical sensing \cite{Willis2012, Savage2013}.
+
+Commonly available materials for 3D printers include plastics, resins, metals and plaster; and for laser cutters wood, paper, acrylic, and metal. Researchers go beyond these materials and invented machines that go beyond these materials. They demonstrated systems that can produce 3D objects from stacks of paper \cite{Oh2018}, that can create soft objects from wool \cite{Hudson2014} or felt \cite{Peng2015}, that integrate fabric with plastics \cite{Rivera2017, Perez2017}, or print with biological material \cite{Wang2016, Yao2015a}.
+
+% not using, but creating interesting hair-like material: Cilllia \cite{}
+% Muth,Lewis14 Embedded 3D Printing of Strain Sensors within Highly Stretchable Elastomers
+
+% \subsubsection{Fabricating interactive objects}
+
+
+
+
+
+
+
+\section{Altering the material distribution}
+
+Changing the material distribution inside 3D objects for manipulating objects' properties. This includes changing the density of static objects, distributing rigid and soft materials to change how objects' deform or to make them fold from 2D to 3D structures.
+
+\subsection{Static internal material distribution}
+Researchers in HCI and computer graphics explored how to define the behavior of printed objects. In particular they optimized the rigid internal structure of objects in order to optimize the object’s strength-to-weight ratio depending on predefined static loads \cite{Lu2014, Chen2018, Wu2016}. By defining void areas inside a 3D object, researchers effectively move the object’s center of gravity in order for unbalanced shapes to stand \cite{Prevost2013}.
+
+Similar approaches are also effective for dynamic movements. For example, void areas on the inside of objects can be optimized in order to allow arbitrary objects to spin \cite{Bacher2014a}. To give arbitrary shapes multiple stable poses, researchers integrated moving masses \cite{Prevost2016}, which even allows for stable poses while the object is floating in water.
+
+
+% \subsection{Varying compliance by combining multiple materials}
+\subsection{Defining how objects deform}
+
+More complex fabrication processes allow to print with multiple materials and therefore to compliance and deformation as properties to engineer with. Multi-material 3D printers, such as the Objet Connex series, allows to deposit different materials at every voxel. 
+
+\subsubsection{Localized compliance}
+This allows mixing stiff and soft material arbitrarily throughout the object \cite{Kou2007}. By applying techniques such as dithering, highly personalized compliance distributions for, e.g., sockets of prosthetics \cite{Doubrovski2015}, can be realized. Another interesting application area of objects with localized compliance is to realistically model how organs feel, which can serve in the training of doctors. For this purpose, Zehnder et al. \cite{Zehnder2017} developed a computational approach to calculate the internal distribution of stiffer silicone within soft silicone as to resemble a specific feel on the outsite.
+
+% (tools to create multi-material objects: VoxCAD, Vidimce, Spec2Fab, Foundry)
+% multi-material printers even enable printing hydraulic machines, i.e., ... \cite{MacCurdy2016}.\\
+
+
+\subsubsection{Reaching a target shape}
+Optimizing the material distribution can be used to match a pre-defined target shape based on some simple actuation. For example, Skouras et al. \cite{Skouras2013a}, used multi-material printing to create articulated characters. They computed which voxels will be printed using stiff material and which using soft materials, taking into account some locations where the material will be pulled, to match the target shapes of a figure. {P{\'{e}}rez et al. \cite{Perez2015} also matched target shapes, but by optimizing a rod network from a single material. Such target-shape optimizations were also demonstrated for inflatable structures \cite{Skouras2012}, where the stretching of the material after inflation is taken into account. To control the resulting target shapes further, researchers printed rigid shapes onto pre-stretched material \cite{Perez2017, Guseinov2017}. The benefit of this approach is that the object is fabricated as a flat piece and only transforms into its target shape once the tension of the base material is released. 
+
+
+\subsubsection{Shape-change and self-assembly}
+Self-assembly builds on a similar concept, where objects are designed to be fabricated flat and to fold up into a 3D shape once they are actuated  \cite{Tibbits2014, Raviv2015}. Typical forms of actuation include pneumatic actuation, the use of thermally responsive or light absorbing or hydrophilic materials \cite{Geryak2014, VanManen2018}. 
+
+Pneumatically actuated objects feature strategically placed pockets that are inflated after fabrication to transform from 2D to 3D \cite{Ou2016, Overvelde2016a}. This type of actuation, however, requires a compressor and some pipes, which is why researchers are interested in using materials with properties that are easier to actuate. Submerging objects in water is easy to do. Therefore, researchers layered hydrophobic and hydrophilic materials as an actuation mechanism \cite{Raviv2015, Wang2017}. Once the object is submerged in water, the hydrophilic material soaks up water and expands making the area bend. Placing such bending elements strategically allows for self-folding 3D objects.
+
+Since actuation using water is very slow, researchers investigated thermally active materials \cite{Ge2014} such as shape memory polymers \cite{Yu2015}. Sandwiching a thermally active material between two layers of rigid materials allows controlling the bending angles and direction (mountain vs. valley fold) by generating parameterized gaps in the rigid material \cite{An2014}. The folding of complex shapes requires to take the sequence of folding of parts into to self-collisions, which Mao et al. \cite{Mao2015} solved by modifying the composition of shape memory polymers as to program the folding sequence of an object. Recently, these capabilities were made available for simple 3D printers using commonly available materials (TPU, PLA, paper) \cite{An2018, Wang2018}. 
+
+Hawkes et al. \cite{Hawkes2010} introduced magnets that hold the 3D shape of their heat activated self-folding objects while Miyashita et al. \cite{Miyashita2015} build use magnet that is enclosed in the self folded object to enable remote actuation, thus acting like a simple robot. 
+
+While thermally responsive materials are most common for self-assembly, researchers also investigated light absorbing materials as an actuation technique \cite{Tolley2013} and even biological materials \cite{Yao2015, Wang2017a}.
+
+The benefits of such programmable, self-assembling objects span from easing packaging and transportation to remotely actuated robots \cite{Miyashita2015} that can even be ingested \cite{Miyashita2016}. Researchers are working towards entirely soft, autonomous robots \cite{Wehner2016}.
+
+% based on origami: looking at geometry, non-idealized \cite{PerazaHernandez2016} Modeling and analysis of origami structures with smooth folds
+
+
+\subsection{Monolithic mechanisms based on deformation}
+
+Compliant mechanisms are deforming structures that by allow for implementing a mechanism placing flexures. While traditional mechanisms use very stiff (rigid) parts that are connected by hinges to transform motion or forces, compliant mechanisms consist of (mostly) one part with the hinging parts being very thin \cite{Howell2013}. Making the material thin increases its flexibility and allows for hinging behavior. Therefore, these parts are also known as flexures \cite{Trease2005}. Since the movement is performed by deformation there is virtually no friction, no need for lubrication, and thus for maintenance. Due to consisting of only one part, compliant mechanisms miniature well and are therefore commonly used in micro-electromechanical systems (MEMS) \cite{Gafford2014}.
+
+To create such compliant mechanisms, researchers proposed topology optimization algorithms \cite{Sigmund1997a, Zhu2013, Zhu2014}, which allow for an abstract problem statement and return the material distribution on a voxel-level that implements a simple mechanism such as a gripper. However, topology optimization is also effective on a defined network of struts \cite{Mankame2004, Mankame2006, Saxena2005}. Recently, Megaro et al. \cite{Megaro2017} presented a system that converts a traditional linkage mechanism into complex compliant mechanisms (e.g., a hand with all joints).
+
+% Interestingly, Rai et al. \cite{Rai2010} showed that partially compliant mechanisms, i.e., compliant mechanisms that incorporate some traditional hinges, are more stable than fully compliant or traditional mechanisms. To increase the 
+
+% partially compliant mechanism better than fully compliant or rigid body \cite{Rai2010}.
+% contact-aided (explain): 
+
+
+
+
+
+
+
+
+\section{Engineering new materials}
+
+Researchers in the disciplines of mechanical engineering and physics took such compliant structures to the micro- and nano-scale in order to engineer new materials. 
+
+% \todo{ultimate goal: Synthesis Machine [Service2015]}
+
+% \todo{fabrication techniques to achive this: \\
+% VanAssenbergh2018: Nanostructure and Microstructure Fabrication: From Desired Properties to Suitable Processes \\
+% Truby2016: Printing soft matter in three dimensions}
+
+They create microstructures that define the material's properties. Such engineered material properties vary from ultra-lightweight structures over tuning of acoustic, optical, or electromagnetic wave lengths to mechanical properties such as shock absorption. We will focus on mechanical properties, as they are most relevant to this thesis. 
+
+\subsection{Mechanical metamaterials}
+Metamaterials are understood as artificial structures structures with properties that are defined by their usually repetitive cell patterns, rather than the material they are made of \cite{Bertoldi2017, Christensen2015, Paulose2015}.  
+
+% ``Metamaterials are carefully structured materials---often consisting of periodically arranged building blocks---that exhibit properties and functionalities that differ from and surpass those of their constituent materials rather than simply combining them." \cite{Bertoldi2017}
+% ``Metamaterials are man-made designer matter that obtains its unusual effective properties by structure rather than chemistry." [Christensen2015]
+% ``Mechanical metamaterials are artificial structures whose unusual properties originate in the geometry of their constituents, rather than the specific material they are made of." [Paulose2015]
+
+% \todo{foam example?}
+
+Such `cells' can be designed and engineered to undergo a desired deformation. When many unit cells are connected on a larger grid, the individual deformations of the cells together form unprecedented macro-scale properties. Overvelde et al. \cite{Overvelde2012a, Overvelde2014} demonstrated the concept of metamaterials nicely: they showed how different unit cells, which were modeled as holes in a square with different shapes (circle, cross, star), influences the overall deformation when the material is compressed. And the overall deformation varies dramatically! 
+
+% \todo{add image from my slides}
+
+% \todo{Milton1995b}
+
+Based on this concept of specifying the overall material properties by designing the internal structure, researchers developed many interesting materials, some of which we discuss in the following.
+
+\subsubsection{Ultra-lightweight, strong materials} %Varying density, stiffness, or elasticity
+Cells arranged on a regular grid were shown to be very successful in varying bulk material properties, i.e., properties that affect the entire material as opposed to localized properties. One interesting material property to engineer is its density. A traditional material that has amongst the highest strength-to-weight ratio are ceramics, however, at the same time they are very brittle. Meza et al. engineered a material that consists of octahedhedral-tetrahedral cells that are made of hollow ceramic beams \cite{Meza2014, Meza2014a, Montemayor2014, Zheng2014}. Only changing the geometry while still using ceramics to make the metamaterial allowed the material to compress up to 50\% and still recover. This means that these researchers successfully reduced the brittleness and created an ultra-lightweight yet strong material, which is relevant, e.g., for air- and spacecrafts. 
+
+\textit{Hierarchical metamaterials. } Since such architected structures already showed such promising changes in properties, the researchers went further and applied them in a hierarchical manner \cite{Meza2015}. They made the beams within their nanolattices from self-similar structures and found that introducing hierarchy enables a combination ultra-lightweight and recoverability. Moreover, they observed a near-linear scaling of stiffness and strength with density, which promises for futher miniaturization.
+
+\textit{Pentamode materials. } Milton \cite{Milton1995b} showed already in 1995 that such structures can be engineered to be rigid in one direction but compliant in another. One especially notable type of material are so-called pentamode materials. While they are rigid against compression in all directions they are very easy to shear, which makes them behave like solid fluids. Bückmann et al. later showed that such pentamode structures can be used as a `unfeelability cloak' \cite{Buckmann2014, Buckmann2015a}. They calculated the cells that surround an object as to feel like there was no object hidden in the material.
+
+%stretchable (Choi2015, mesostructure, wrist band)\\
+
+
+\subsubsection{Volume-changing materials (`auxetics')}
+
+Another interesting material property is the expansion or contraction ratio. When conventional materials such as wood or metals are stretched, they compress in the orthogonal direction. However, in the late 1980ies, researchers suggested structures that would do the contrary, i.e., as a material is stretched vertically, it gets \textit{thicker} horizontally. The material effectively changes its volume. Such materials are known as auxetic materials or materials with a negative Poisson's ratio. After Almgren \cite{Almgren1985} demonstrated a mechanical structure made from rods, hinges and springs that has a negative Poisson's ratio, Lakes \cite{Lakes1987} suggested a monolithic 3-dimensional cell based on a similar structure.  
+
+% Milton1992-Composite materials with poisson's ratios close to -1\\
+
+These structures are known as re-entrant honeycombs and inspired many researchers to this day. It is a well researched topic due to the unusual nature of this auxetic property. There are several articles that review the developments of auxetic materials \cite{Ren2018, Kolken2017, Saxena2016, Christensen2015, Mir2014a} as well as an extended study of variations of cell geometries and the impact on the resulting Poisson's ratio \cite{AlvarezElipe2012}.
+
+Auxetic materials can be achieved using re-entrant structures, as mentioned above, or by rotation. Re-entrant structures are, e.g., honeycombs where 2 opposite vertices of the hexagon are pushed towards the center of the structure. This causes them to push their neighboring cells horizontally outwards when they are pulled apart vertically, thus expanding in both directions. The same principle has also been shown on other re-entrant shapes, such as stars. The second mechanism is to arrange cells on a regular lattice and connect them at their corners, such that the cells (e.g., rigid squares, triangles, etc.) rotate around each other to expand in both directions \cite{Grima2000, Jiang2018}. Such auxetic materials can also be arranged in a hierarchical manner \cite{Seifi2017, Mousanezhad2015}, which allows for a better control over the degrees of freedom. These rotating cells can be produced by simply perforating sheets \cite{Shan2015a}. In fact, researchers in computer graphics used the auxetic property of rotating triangles to create 3D objects with spherical curvatures (doubly curved) from a perforated sheet \cite{Konakovic2016}.
+
+Besides the just mentioned auxetic cells, there is also a very simple cell geometry that is auxetic. It is not obvious that it would be, since the cell is a simple square with a circular hole \cite{Mullin2007, Bertoldi2010}. Shim et al. \cite{Shim2013a} show how, again, the lattice plays a big role to the extend of the auxeticity, with the square lattice contributing to the largest auxeticity compared to triangular, trihexagonal or rhombitrihexagonal tiling. Going beyond 2D structures, researchers also found such structures to work in spherical, thus 3-dimensional cells \cite{Shim2012, Babaee2013}. 
+
+
+% Karnessis2013 - tubes\\
+
+
+\subsubsection{Shock absorbing materials}
+
+Metamaterial structures were also designed to create materials that ``pull" in the direction of compression rather than resisting it, which are known as `negative stiffness' materials. These materials were shown to be effective shock absorbers \cite{Shan2015, Restrepo2015, Rafsanjani2015, Correa2015, Correa2015b, Harne2013} Such materials are usually implemented by creating bistable unit cells. These bistable units usually consist of a curved, slender beam that is clamp between rigid elements. When that so-called bistable spring is pushed back, it snaps through to its second stable position, in which it then remains. The previously mentioned researches used this snap-through to trap energy in the resulting deformation. This trapped energy is absorbed from the impact energy of an, e.g., falling egg \cite{Shan2015}. All these shock absorbers are recoverable since they only need to be pulled out for the bistable springs to snap back into their first stable position. Frenzel et al. \cite{Frenzel2016a} even suggested beam configurations for such bistable unit cells to be self-recovering.  
+
+Researchers also showed that these negative stiffness properties can be combined with auxetic properties \cite{Hewage2016} or that this bistable property can be used to simply lock the volume change of auxetics \cite{Rafsanjani2016}. Such bistable cells can also be used to pop out into the third dimension from a flat sheet and thus be appropriated for shape-change \cite{Haghpanah2016, Chen2017}. 
+
+
+\subsubsection{Wave propagating materials}
+
+Bistable structures have also been shown effective in propagating waves through materials. In general, the bistability depends on the spring's geometry and can be varied by the angle \cite{Beharic2014} and the curvature \cite{Qiu2004}, which will also vary the force hat the snap-through produces \cite{Cazottes2009}. 
+
+Researchers investigated these parameters to create bistable structures that propagate waves through soft materials \cite{Nadkarni2014, Raney2016}---an interesting property, as traditionally energy would simply dissipate within soft materials such as silicone. Asymmetry in terms of force output is an important characteristic in such wave propagating structures, as comprehensively studied \cite{Kidambi2017, Wu2018}. Since one bistable spring will trigger its successor, the force output of the first spring must be higher than the force it takes to trigger the second spring. The aforementioned works show how that can be achieved by pre-stressing the spring. For example, when a $40\, \mathrm{mm}$ long spring is placed in a $39.5\, \mathrm{mm}$ wide base \cite{Kidambi2017}, the material of the spring is already under stress, i.e. has potential elastic energy stored. Raney et al. \cite{Raney2016} show a similar strategy to tune their soft bistable springs. 
+
+While they also showed that forking such waves is feasible, Zanaty et al. \cite{Zanaty2018} explored bistable structures that change directions and are directly coupled. They are programmed by varying the distance from the base strucutre, i.e., by pushing the bistable spring further together or apart. This is a similar approach to our earlier work on Digital Mechanical Metamaterials that we discuss in Chapter \ref{chapter:digital}, not least because it was also inspired by Merkle's mechanical logic \cite{Merkle1993}. We, however, use printed blockers to implement our logic as opposed to varying the buckling of each bistable spring. 
+
+% tristable:
+% Wang2014: A tristable compliant micromechanism with two serially connected bistable mechanisms
+
+
+\subsubsection{Origami- and kirigami-based metamaterials}
+
+By using origami, the japanese art of folding paper into 3D sculptures, researchers showed that such folded structures also exhibit interesting properties. One of the first folding patterns that is today considered a metamaterial is the Miura-ori pattern \cite{Miura1985}. It is an auxetic structure, originally designed as a packaging method for solar collectors to efficiently transport them into space. Once in space, they would be actuated by a simple 1D mechanism yet fold up into large 2D membranes. Schenk et al. \cite{Schenk2013} demonstrated the versatility of the Miura-ori pattern by showing that transformations from 2D folded configurations to 3D volumes are realizable. They achieved this by stacking different layers of the pattern and even demonstrated self-locking configurations. Organizing the Miura fold in tubes enables stiff yet reconfigurable structures \cite{Filipov2015}. Such findings are important for, e.g., deployable structures as shelters in emergency situations or for deployment in space. 
+
+Kirigami, a variation of origami that includes cutting of the paper, was also shown to be an effective technique for increasing the stiffness of a material \cite{Rafsanjani2017}. While a simple sheet bends easily under load, cutting the sheet into a Miura kirigami sheet (a square array of mutually orthogonal cuts), makes the cells rotate vertically when the sheet is stretched, which increases the bending stiffness of the sheet. Kirigami metamaterials have applications in shape changing structures \cite{Neville2016} or even as stretchable batteries \cite{Song2015}.
+
+% (Eidini2015: Unraveling metamaterial properties in zigzag-base folded sheets)\\
+% (review: Callens2018: From flat sheets to curved geometries: Origami and kirigami approaches)
+
+
+\subsubsection{Actuated and reconfigurable metamaterials}
+
+While many studies of metamaterials are concerned with the change in properties after the metamaterial was deformed, creating metamaterials that have built-in actuation mechanisms are of increasing interest. Generally, all mechanisms for actuated shape-changing objects or self-assembly (as discussed above) can be applied to metamaterials, which include pneumatics, thermally responsive or light absorbing materials, or magnetic fields \cite{Geryak2014}. 
+
+Overvelde et al. \cite{Overvelde2016a} demonstrated a pneumatically actuated 3D metamaterial. They integrated air pockets that the edges of their cubic shearing cells. Inflating the pocket at an edge causes its connected faces to straighten, which in turn causes the cell to shear. Selectively inflating the air pockets allows for controlling the overall tilting direction(s) of the material. This material can be used as a reconfigurable wave guide \cite{Babaee2016}. Going beyond the square cell, different prisms as unit cells influence the degree to which the material can be reconfigured \cite{Overvelde2017}. The deformation of the overall material can be used as simple soft robots \cite{Yang2015}. Actively creating a vacuum in auxetic pores causes the material between the pores to rotate. Attaching external objects like little beam as arm or as paddles allows for actuated objects, such as grippers or swimmers.
+
+The elastic properties of metamaterials can also be configured using magnets \cite{Haghpanah2016a}. By embedding electromagnets into the beams of the unit cells of a metamaterial, the stiffness of those beams can be actuated; when the magnets are switched off, the beams can separate, when the magnets are on, the beams stick together, forming a stiffer beam of double the thickness. This makes the overall material stiffer. 
+
+% heat: \cite{Zhang2015}: Pattern Transformation of Heat-Shrinkable Polymer by Three-Dimensional (3D) Printing Technique\\
+% Shin2014: combine mechanical with electromagnetic for reconfigurable\\
+
+
+\subsection{Varying cells across an object}
+
+Most of the metamaterials that we have discussed so far actually use only one unit cell within one material. Only recently, the potential of metamaterials with varying the cells were explored. Mirzaali et al. \cite{Mirzaali2018} varied honeycomb cells over the whole spectrum from re-entrant auxetic to conventional cells, in order to match a curved 2D shape after expanding the material. Such mixing of 3D honeycomb cells are also promising for implants, as such `meta-implants' can improve implant longevity \cite{Kolken2018}. The aforementioned mechanical cloak \cite{Buckmann2014, Buckmann2015a} also varies the cell parameter close to the object that is being hidden as to have the same feel on the outside as if there was no object enclosed.
+
+Researchers varied a large number of cells within a 3D model by adopting a computational approach \cite{Panetta2015, Schumacher2015, Panetta2017, Chen2018a}. They varied the parameters of their cells to cover a large area on the Young's modulus\slash Poisson's ratio spectrum, where the Young's modulus describes how elastic a material is. By selecting the the appropriate cells to vary the elasticity locally, they create deformable figures with a prescribed deformation. Such generated elastic cells can also be achieved using multi-material 3D printing and filling the otherwise void areas with soft material \cite{Zhu2017}. This eliminates the need for support structures, but it also increases the stiffness. While Coulais et al. \cite{Coulais2016} did not generate the cells, they varied a set of simple cells as to redirect forces and pop out a hidden texture (e.g., a smiley face) when the material is under compression. Recently, researcher even created metamaterials that are initially flat and can curl up in 3D once actuated \cite{Ou2018}.
+
+% \todo{Ishii: KinetiX - Designing Auxetic-inspired Deformable Material Structures (Elsevier Computers \& Graphics )}
+
+
+Since metamaterial structures also have a certain aesthetic to them, Schumacher et al. \cite{Schumacher2018} recently created an exploration tool that gives designers a choice of different 2D cells and lattices for an elastic property, such that designers can choose the most visually pleasing one.
+
+These works achieve fine-grained differences in Young's modulus\slash Poisson's ratio by parameterized cells. We, however, use \textit{different types} of cells, where the spatial layout within the metamaterial is key to their functionality. 
+
+
+\subsection{Tools for creating metamaterials}
+
+As the structures that enable metamaterials are growing, the tools to create these do too. Still, many researchers in the fields of mechanical engineering, physics, or material sciences create their geometries using professional computer-aided design tools and commercial simulation packages such as ABAQUS\footnote{\url{https://www.3ds.com/products-services/simulia/products/abaqus/}} (e.g., \cite{Jiang2018, Feng2017, Overvelde2014, Shan2015, Mankame2004, Meza2015}), ANSYS\footnote{\url{https://www.ansys.com/}} (e.g., \cite{Wang2001, Rosen2007}), or MATLAB\footnote{\url{https://www.mathworks.com/products/matlab.html}} (e.g., \cite{Wang2001, Beharic2014, Mankame2004}). These tools provide complete freedom in design and analysis and are thus preferred by expert users in research.
+
+To reduce the effort of modeling microstructures, researchers proposed procedural specification of materials \cite{Vidimce2013, Chen2013, Vidimce2016} and visual editing tools \cite{Monolith2018, VoxCAD2018}. Also companies recognized the potential of engineered microstructures and offer software package for specific application domain such as saving material in mechanics \cite{AutodeskNetfabb2018}, for medical use \cite{AutodeskWithin2018}, or precision mechanisms \cite{SPACAR2018}.
+
+
+% commercial: 
+% \cite{AutodeskNetfabb2018, AutodeskWithin2018, Monolith2018, VoxCAD2018, SPACAR2018}
+
+% suggests a pipeline (check how): \\
+% \cite{Rosen2007}: Design for additive manufacturing: A method to explore unexplored regions of the design space \\
+% \cite{Wang2001} - Computer-Aided Design Methods ForThe Additive Fabrication Of Truss Structure \\
+% OpenFab \cite{Vidimce2013}, Spec2Fab \cite{Chen2013}, Foundry \cite{Vidimce2016}
+
+% auto-generation (homogenization): \\
+% \cite{Sigmund1994}: Materials with prescribed constitutive parameters: An inverse homogenization problem \\
+% \cite{Sigmund2009}: Systematic design of metamaterials by topology optimization \\
+% \cite{Mankame2004}: Topology optimization for synthesis of contact-aided compliant mechanisms using regularized contact modeling\\
+% \cite{Panetta2015}: homogenization + painting interface 
+
+
+
+    % mechanisms (check how to deal with this): \\
+    % \cite{Mankame2004}: Topology optimization for synthesis of contact-aided compliant mechanisms using regularized contact modeling\\
+    % \cite{Zhao2015}: Broadband Lamb wave trapping in cellular metamaterial plates with multiple local resonances.
+    % used beams made from cells with locally applying shear cells, not one material, for moving beam in 1D (like MEMS): \cite{Cabello2007}: Planar embeddings of graphs with specified edge lengths
+
+
+
+
+
+\section{Our contribution: engineering metamaterial \textit{devices}}
+
+Our work builds on the advances in fabrication and specifically in metamaterials. The concept of metamaterials is particularly interesting, because it enables us to populate a material with properties of our choosing. Our work is still very distinct from previous work. Previously, metamaterials focused on achieving one property (e.g., change in volume, or energy absorption). We, however, use this cell-based concept to place different properties across the material in such a way that together they form a complete device, rather than a block of material. This enables us to create devices, the functionality of which is solely defined by the cellular microstructure, thus require no assembly or lubrication. 
+
+% The contribution in this dissertation is two-fold; we contribute new types of metamaterials that implement functional devices and we provide easy to use software tools that allow user to create traditional metamaterials and metamaterial devices while having full control over their geometry. 
+
+% First, we do build on metamaterials as a concept but employ a radically different thinking, i.e., ... This thinking allows us to push the field of metamaterials further. ....
+
+% We contribute mechanical....
+
+% Contribute software...
+
+
+
+
+
+
+% Our work builds on previous work in interactive personal fabrication, in particular on techniques that modify the internal structure of 3D printed objects, multi-material printing, and mechanical metamaterials.
+
+% \todo{
+    
+%     designing for fabrication machines 
+%     interacting with the machine 
+%         (on the machine, on the body (Tactum))
+%     printing with different materials
+%         (Compton14 - 3D-printing of lightweight cellular composites; fiber filled ink for more strength)
+
+%     altering material distribution (static) (static, topology optimization, ... simple things)
+
+%     alter compliance and deformation (skouras, fgm)
+%         target shape: skouras, perez2015, guseinov17
+
+%     alter material properties
+%     {metamaterials}
+%     metamaterials are <definition>. sometimes also known as architected materials. mainly domain of mechanical engineering, physics, material science. later will discuss computational tools that help creating such materials. 
+%     there are acoustic, optical, EM. but we focus on mechanical
+%         {uniform lattices}
+%             reduce weight (Greer) similar to topology optimization above but on cell level rather than objects
+%             Miura (auxetic) for deploying solar panels
+%             choi15 - wrist-worn auxetic thermal
+%             damp: recoverable (Correa, Shan), self-recovering (Wegener)
+%         {hierarchical}
+%             chen2016 - thermal and mechanical properties
+%         {parameterized varying cells}
+%             zadpoor, ...)
+%         {computational tools for metamaterials}
+
+% }
+
+% Haghpanah16 - Multistable Shape-Reconfigurable Architected Materials
+
+% Flexures for self-assembly: eg. Felton2014 - A method for building self-folding machines
+
+% "Metamaterials are man-made designer matter that obtains its unusual effective properties by structure rather than chemistry." [Chistensen2015]
+
+% \section{Personal fabrication and user interaction}
+% Personal fabrication devices such as 3D printers and laser cutters allow users to fabricate personalized physical objects. Besides fabricating common decorative objects from rigid plastic, researchers showed how to fabricate a variety of objects, such as printing soft teddy bears \cite{Hudson2010}, optical sensors \cite{Willis2012}, or loudspeakers \cite{Ishiguro2014}. 
+
+% While users traditionally use CAD software to model objects that are to be fabricated, researchers started to explore tools that help users design objects by sketching \cite{McCrae2014, Saul2011} directly on the machine \cite{Follmer2012, Mueller2012}, or by using physical objects \cite{Gannon2015, Weichel2014}. 
+
+% Researchers in HCI and computer graphics explored how to define the behavior of printed objects. In particular they changed the rigid inside structure of objects in order to optimize the object’s strength-to-weight ratio \cite{Lu2014}, to balance the object (e.g. “make it stand” \cite{Prevost2013}) or to allow it to spin \cite{Bacher2014}. Savage et al. help adding electronic sensing capabilities to printed objects \cite{Savage2013} by creating tubes and holes inside an object \cite{Savage2014}.
+
+% One contribution of our work is to allow users to interactively define the mechanical behavior of 3D printed objects by arranging many cells. Since this requires users to interact with discrete elements, we provide a voxel-like editor that allows users to edit metamaterials efficiently. 
+
+
+% \section{Compliant mechanisms and flexures}
+% Our work builds on deformable struts that transfer forces. Similar mechanical structures have been examined in the context of compliant mechanisms, i.e., monolithic structures that transfer motion, force and energy without traditional hinges, but using flexure hinges (thin regions that are bendable and allow for rotation) \cite{Howell2013}. 
+
+
+% \section{Multi-material printing}
+
+% The work presented in this paper explores how to create objects the behavior of which varies across the object’s geometry. A more traditional solution to this question is the use of multi-material 3D printers (e.g. Objet Connex), which allow printing different regions of an object from different materials in order to achieve different mechanical properties, such as elasticity. Recently, researchers developed a printer that prints hydraulics \cite{MacCurdy2016}. 
+
+% % Vidimče et al. proposed a programmable rendering pipeline which integrates the printing material into shaders \cite{Vidimce2013}. 
+
+% % \todo{Chen2013 - Spec2Fab: It is often more nat- ural to define a functional goal than to define the material composi- tion of an object. For deformation, caustics, textures}
+
+% Researchers also optimized material distribution, they varied it over an object’s volume to match predefined target poses \cite{Skouras2013}, or mathematically modeled the material distribution \cite{Kou2007, Liu2004} based on, e.g., MRI data for medical purposes \cite{Doubrovski2014}. Such materials are also referred to as functionally graded materials.
+
+% However, multi-material printers are more complex, the resulting objects are harder to recycle, and limited to the omnidirectional mechanical behavior of traditional materials. This led researchers into exploring how to obtain mechanical behavior by arranging a single material. 
+
+
+% \section{Mechanical metamaterials} 
+% Metamaterials are artificial structures, usually repetitive patterns. Their unusual properties originate from their geometry, rather than the material they are made of \cite{Paulose2015}.
+
+% Researchers in the fields of mechanical engineering and material science discovered designs for cell structures to create material properties that can only be achieved using metamaterials. For example, when conventional materials are stretched, they compress in the orthogonal direction. However, researchers designed cell structures that let the material stretch in both directions (so-called auxetic behavior \cite{Elipe2012, Mir2014, Shim2012}). Metamaterial structures were also designed to create materials that “pull” in the direction of compression rather than resisting it (negative stiffness materials \cite{Mullin2007}) as usual materials would. Researchers created materials that damp (large energy absorption capabilities \cite{Montemayor2014}), and materials that behave like ``liquid solids'', i.e., they are hard to compress but easy to deform (pentamode metamaterials \cite{Milton1995}) Such metamaterial structures were typically designed by a mathematical formulation of the desired behavior or empirical experimentation.
+
+% The evolution of metamaterials has been further driven by recent advances in high-resolution 3D printing. An example of this is a printed material by Bickel et al. with structured pores that lowers the material’s resistance to uniform compression, i.e., its overall stiffness \cite{Bickel2010}. Chu et al. went further by introducing a set of unit cells and an optimization method that creates unit cells to match a specified stiffness distribution \cite{Chu2008}. Recently, Schumacher et al. and Panetta et al. focused on elastic properties which they computationally varied across an object \cite{Panetta2015, Schumacher2015}. 
+
+% % \todo{computational tools: 
+
+% % Chen18 - Computational discovery of extremal microstructure families
+
+% % }
+
+
+% \section{Creating metamaterial structures}
+% One of the contributions of our work is our interactive metamaterial editor. So far, metamaterials have mostly been created by scripting them (e.g. in matlab \cite{Mullin2007, Paulose2015}) or the structures were generated after specifying forces or displacements on the object’s boundary \cite{Schumacher2015}. However, generating the microstructure based on forces that are applied on the outside of an object only allows for interpolating elasticity parameters, i.e., creating gradients between soft and rigid cells. Similarly, there are other editors that optimize the stiffness distribution of an homogenous internal structure \cite{AutodeskWithinOnline, MonolithOnline, NetfabbOnline} based on force vectors.
+
+% Integrating mechanisms into metamaterials is more complex than varying the local compliance of 3D printed objects. Creating metamaterial mechanisms involves directional compliance of cells as well as specific spatial arrangements of such blocks to enable the functionality of the machine. We provide a 3D editor that allows users to create and simulate cell structures interactively.
+
+
+%\section{Mechanical logic systems} 
+
+
+
+
+% -- METAMATERIAL MECHANISMS related work --
+% \section{Related work}
+
+% Our work builds on previous work in interactive personal fabrication, in particular on techniques that modify the internal structure of 3D printed objects, multi-material printing, and mechanical metamaterials.
+
+
+% \subsection{Personal fabrication and user interaction}
+% Personal fabrication devices such as 3D printers and laser cutters allow users to fabricate personalized physical objects. Besides fabricating common decorative objects from rigid plastic, researchers showed how to fabricate a variety of objects, such as printing soft teddy bears \cite{Hudson2010}, optical sensors \cite{Willis2012}, or loudspeakers \cite{Ishiguro2014}. 
+
+% While users traditionally use CAD software to model objects that are to be fabricated, researchers started to explore tools that help users design objects by sketching \cite{McCrae2014, Saul2011} directly on the machine \cite{Follmer2012, Mueller2012}, or by using physical objects \cite{Gannon2015, Weichel2014}. 
+
+% Researchers in HCI and computer graphics explored how to define the behavior of printed objects. In particular they changed the rigid inside structure of objects in order to optimize the object’s strength-to-weight ratio \cite{Lu2014}, to balance the object (e.g. “make it stand” \cite{Prevost2013}) or to allow it to spin \cite{Bacher2014}. Savage et al. help adding electronic sensing capabilities to printed objects \cite{Savage2013} by creating tubes and holes inside an object \cite{Savage2014}.
+
+% One contribution of our work is to allow users to interactively define the mechanical behavior of 3D printed objects by arranging many cells. Since this requires users to interact with discrete elements, we provide a voxel-like editor that allows users to edit metamaterials efficiently. 
+
+
+% \subsection{Compliant mechanisms and flexures}
+% Our work builds on deformable struts that transfer forces. Similar mechanical structures have been examined in the context of compliant mechanisms, i.e., monolithic structures that transfer motion, force and energy without traditional hinges, but using flexure hinges (thin regions that are bendable and allow for rotation) \cite{Howell2013}. 
+
+
+% \subsection{Multi-material printing}
+% The work presented in this paper explores how to create objects the behavior of which varies across the object’s geometry. A more traditional solution to this question is the use of multi-material 3D printers (e.g. Objet Connex), which allow printing different regions of an object from different materials in order to achieve different mechanical properties, such as elasticity. Recently, researchers developed a printer that prints hydraulics \cite{MacCurdy2016}. Vidimče et al. proposed a programmable rendering pipeline which integrates the printing material into shaders \cite{Vidimce2013}. Researchers also optimized material distribution, they varied it over an object’s volume to match predefined target poses \cite{Skouras2013}, or mathematically modeled the material distribution \cite{Kou2007, Liu2004} based on, e.g., MRI data for medical purposes \cite{Doubrovski2014}. Such materials are also referred to as functionally graded materials.
+
+% However, multi-material printers are more complex, the resulting objects are harder to recycle, and limited to the omnidirectional mechanical behavior of traditional materials. This led researchers into exploring how to obtain mechanical behavior by arranging a single material. 
+
+
+% \subsection{Mechanical metamaterials} 
+% Metamaterials are artificial structures, usually repetitive patterns. Their unusual properties originate from their geometry, rather than the material they are made of \cite{Paulose2015}.
+
+% Researchers in the fields of mechanical engineering and material science discovered designs for cell structures to create material properties that can only be achieved using metamaterials. For example, when conventional materials are stretched, they compress in the orthogonal direction. However, researchers designed cell structures that let the material stretch in both directions (so-called auxetic behavior \cite{Elipe2012, Mir2014, Shim2012}). Metamaterial structures were also designed to create materials that “pull” in the direction of compression rather than resisting it (negative stiffness materials \cite{Mullin2007}) as usual materials would. Researchers created materials that damp (large energy absorption capabilities \cite{Montemayor2014}), and materials that behave like ``liquid solids'', i.e., they are hard to compress but easy to deform (pentamode metamaterials \cite{Milton1995}) Such metamaterial structures were typically designed by a mathematical formulation of the desired behavior or empirical experimentation.
+
+% The evolution of metamaterials has been further driven by recent advances in high-resolution 3D printing. An example of this is a printed material by Bickel et al. with structured pores that lowers the material’s resistance to uniform compression, i.e., its overall stiffness \cite{Bickel2010}. Chu et al. went further by introducing a set of unit cells and an optimization method that creates unit cells to match a specified stiffness distribution \cite{Chu2008}. Recently, Schumacher et al. and Panetta et al. focused on elastic properties which they computationally varied across an object \cite{Panetta2015, Schumacher2015}. 
+
+
+% \subsection{Metamaterial editing}
+% One of the contributions of our work is our interactive metamaterial editor. So far, metamaterials have mostly been created by scripting them (e.g. in matlab \cite{Mullin2007, Paulose2015}) or the structures were generated after specifying forces or displacements on the object’s boundary \cite{Schumacher2015}. However, generating the microstructure based on forces that are applied on the outside of an object only allows for interpolating elasticity parameters, i.e., creating gradients between soft and rigid cells. Similarly, there are other editors that optimize the stiffness distribution of an homogenous internal structure \cite{AutodeskWithinOnline, MonolithOnline, NetfabbOnline} based on force vectors.
+
+% Integrating mechanisms into metamaterials is more complex than varying the local compliance of 3D printed objects. Creating metamaterial mechanisms involves directional compliance of cells as well as specific spatial arrangements of such blocks to enable the functionality of the machine. We provide a 3D editor that allows users to create and simulate cell structures interactively.
+
+

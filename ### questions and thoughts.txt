@@ -1,0 +1,9 @@
+Oliver:
+1. what is your contribution to HCI?
+2. what is your contribution to Metamaterials?
+
+(HCI: using the concept of metamaterials allwos to create interactive objects with no electronics (& printed in one piece))
+(mm: metamaterials viewed in isolation, we integrate in objects and build tools to do so -> need system to mix & match mm cells, oliver thought of analogy to systems engineering)
+
+Interactive metamaterials build cool bridge to jaws that allows a "metamaterial object" to contain other things.
+

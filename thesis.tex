@@ -1,0 +1,55 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[dsinglespace]{harvard-thesis}
+
+\newcommand{\todo}[1]{\textbf{\textcolor{magenta}{#1}}}
+
+\begin{document}
+
+% the front matter
+\input{frontmatter/coverpage}
+\pagenumbering{roman}
+\maketitle
+% \copyrightpage
+\dedicationpage
+\abstractpage
+\zusammenfassung
+\acknowledgments
+
+
+\singlespacing
+
+\publicationspage
+%\listoffigures
+
+% \include{_TODOs}
+
+\tableofcontents
+\clearpage % otherwise the pagenumbering starts at second page of toc
+%\authorlist
+
+\onehalfspacing
+\pagenumbering{arabic}
+
+\include{chapters/1-introduction}
+\include{chapters/2-related-work}
+\include{chapters/3-metamaterial-mechanisms}
+\include{chapters/4-understanding-metamaterial-mechanisms}
+\include{chapters/5-digital-metamaterials}
+\include{chapters/6-metamaterial-textures}
+% \include{chapters/99-software-editor}
+\include{chapters/7-conclusion}
+
+\singlespacing
+
+% the back matter
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+\bibliography{references}
+\bibliographystyle{plainnat}
+%\include{endmatter/colophon}
+
+
+\end{document}
