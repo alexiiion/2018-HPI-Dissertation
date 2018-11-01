@@ -16,7 +16,7 @@ We demonstrated our novel concept with example objects including a door latch or
 In this work, we investigate the underlying working principles of such metamaterial mechanisms. To do so, we analyze the interaction of the two types of cells, identify the underlying topological constraints of metamaterial mechanisms, and ultimately implement this domain knowledge into a computational design tool for non-expert users.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/1-editor-and-walker.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/1-editor-and-walker.pdf}
     \caption[Short figure name.]{We define the underlying working principles of metamaterial mechanisms, which allows us to implement a computational design tool. (a) It takes user-drawn paths and (b) optimizes the cell configuration which implements the transformation. (c) In this example, we show the leg of a walker. (d) The fabricated result matches the optimized motion closely.
     \label{fig:1-editor-walker}}
 \end{figure}
@@ -24,19 +24,19 @@ In this work, we investigate the underlying working principles of such metamater
 
 \section{Motivation \& challenges}
 
-In this work, we set out to understand the underlying mechanisms that inform the design of metamaterial mechanisms. Such metamaterial mechanisms, as introduced by Ion et al. [18], implement a transformation of an input movement to an output movement, such as in Figure \ref{fig:2-compare-doorlatch} with the retraction of the bolt when the door handle is pushed down.
+In this work, we set out to understand the underlying mechanisms that inform the design of metamaterial mechanisms. Such metamaterial mechanisms, as we introduced earlier in Chapter \ref{chapter:analog-metamaterials}, implement a transformation of an input movement to an output movement, such as in Figure \ref{fig:2-compare-doorlatch} with the retraction of the bolt when the door handle is pushed down.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/2-comparison-doorlatch.png}
-    \caption[Short figure name.]{(a) Metamaterial mechanisms [18] are implemented by their cell structure to create, e.g., this door latch, from a single block of material. (b) The microstructure implements a transformation from the green input path (pushing the handle) to the pink output path (retracting the bolt).
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/2-comparison-doorlatch.pdf}
+    \caption[Short figure name.]{(a) Metamaterial mechanisms are implemented by their cell structure to create, e.g., this door latch, from a single block of material. (b) The microstructure implements a transformation from the green input path (pushing the handle) to the pink output path (retracting the bolt).
     \label{fig:2-compare-doorlatch}}
 \end{figure}
 
 Metamaterial mechanisms combine two types of cells on a regular grid. The individual cells (see Figure 3), are very simple---they are rigid or can shear. These cells are careful arranged within the material to play together in a well-defined way to implement the mechanism.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/3-individual-cells.png}
-    \caption[Short figure name.]{Metamaterial mechanisms [18] consist of simple cells: shearing cells and rigid cells. (a) Shearing cells constrain their opposing edges to remain parallel and (b) rigid cells additionally maintain their angle.
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/3-individual-cells.pdf}
+    \caption[Short figure name.]{Metamaterial mechanisms consist of simple cells: shearing cells and rigid cells. (a) Shearing cells constrain their opposing edges to remain parallel and (b) rigid cells additionally maintain their angle.
     \label{fig:3-individual-cells}}
 \end{figure}
 
@@ -48,7 +48,7 @@ In the remainder of this chapter, we will discuss metamaterial mechanisms on a h
 To achieve the movement that implements the desired mechanism, the cells need to be arranged on a grid to play together in a well-defined way. More formally, “play together” means that each individual cell has constraints that it propagates to its neighbors. For example, opposing edges of shear cells remain parallel (parallelism constraints) and rigid cells additionally maintain their angle (angle constraints). Since the cells are connected in two dimensions, their constraints can interact. We illustrate such constraint interactions in Figure \ref{fig:4-constraint-interaction}. This example shows how adding a single cell (marked in blue) prevents 7 other shear cells on the grid from shearing.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/4-constraint-interaction.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/4-constraint-interaction.pdf}
     \caption[Short figure name.]{(a) In this example, (b) setting one cell rigid (c) prevents 7 cells from shearing, which changes the output drastically. (c) The green input path from (a) cannot be followed anymore.
     \label{fig:4-constraint-interaction}}
 \end{figure}
@@ -57,12 +57,12 @@ To achieve the movement that implements the desired mechanism, the cells need to
 The example depicted in Figure \ref{fig:4-constraint-interaction} illustrates that interactions of constraints are unobvious and that by understanding them, we can reduce the search space drastically. We drill down on this example in Figure \ref{fig:5-large-search-space}. Here, the naive approach of simply swapping cell types to find a configuration that reaches a user-defined path results in $2^7=128$ equivalent mechanisms. This is because any changes within the 7 cells marked in orange (from Figure \ref{fig:4-constraint-interaction}) have no effect on the resulting mechanism. 
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/5-large-search-space.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/5-large-search-space.pdf}
     \caption[Short figure name.]{In this example, we have 128 configurations that all lead to the same mechanism, because the cell constraints interact. 
     \label{fig:5-large-search-space}}
 \end{figure}
 
-While this example only concerns with one specific scenario, the complete search space would be $2^{25} \approx 3*{10}^7$. We generalize this in Section \ref{section:search-space} and show how we reduce the search space by several orders of magnitude.
+While this example only concerns with one specific scenario, the complete search space would be $2^{25} \approx 3*{10}^7$. We generalize this in Section~\ref{section:search-space} and show how we reduce the search space by several orders of magnitude.
 
 
 \subsection{Abstract representation reduces the search space}
@@ -77,11 +77,11 @@ Our constraint-based representation of the metamaterial mechanism and the result
 
 \subsection{Novel types of mechanisms}
 
-With our computational approach, we not only ease the creation process for users, but we also discover new types of mechanical transformations that were not known before. Metamaterial mechanisms [18] were manually designed to demonstrate useful mechanisms, such as a door latch or pliers. However, we show in Figure \ref{fig:6-compare-old-and-new-mechanisms} that the transformations they implemented were basic transformations, such as scaling. In this work, we demonstrate non-linear transformations, as illustrated in Figure 6b, such as self-intersections, oscillations and smoothing. We believe that the approach will foster more complex metamaterial mechanisms. 
+With our computational approach, we not only ease the creation process for users, but we also discover new types of mechanical transformations that were not known before. Metamaterial mechanisms were manually designed to demonstrate useful mechanisms, such as a door latch or pliers. However, we show in Figure \ref{fig:6-compare-old-and-new-mechanisms} that the transformations they implemented were basic transformations, such as scaling. In this work, we demonstrate non-linear transformations, as illustrated in Figure 6b, such as self-intersections, oscillations and smoothing. We believe that the approach will foster more complex metamaterial mechanisms. 
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/6-compare-old-and-new-mechanisms.png}
-    \caption[Short figure name.]{(a) The hand-designed mechanisms in [18] only realize simple transformations. (b) In this work, we discover more complex and even non-linear transformations.
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/6-compare-old-and-new-mechanisms.pdf}
+    \caption[Short figure name.]{(a) The hand-designed mechanisms in only realize simple transformations. (b) In this work, we discover more complex and even non-linear transformations.
     \label{fig:6-compare-old-and-new-mechanisms}}
 \end{figure}
 
@@ -94,7 +94,7 @@ While the naive approach of swapping cells on the grid in order to find a cell c
 
 We show that metamaterials can realize more complex and even non-linear mechanisms---a fact that was unknown before.
 
-However, in this work, we focus on understanding the constraints on the most basic cells, i.e., the square shear and rigid cells. We do not explicitly implement rotated or pre-sheared cells, as suggested in [18]. Since the topology is the same, we show that our constraint graph applied to those cells as well. 
+However, in this work, we focus on understanding the constraints on the most basic cells, i.e., the square shear and rigid cells. We do not explicitly implement rotated or pre-sheared cells, as suggested in Section~\ref{section:shear-cell}. Since the topology is the same, we show that our constraint graph applied to those cells as well. 
 
 
 \section{Analysis of cell interactions}
@@ -115,7 +115,8 @@ This means most edges cannot move independently, e.g. the same vector can repres
 Figure \ref{fig:7-single-cell-constraint-graph} illustrates the graph representation for each cell type individually. For shear cells, opposing cell edges always remain parallel. The constraint graph consequently only contains arcs between opposing cell edges. Figure \ref{fig:7-single-cell-constraint-graph}b illustrates that rigid cells are represented by a complete graph. This means that transforming one cell edge defines the transformation of all other edges. In other words, if we know how one edge is, e.g., rotated, we know the transformation of the entire cell, because opposing edges remain parallel and adjacent edges maintain their angle.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/7-single-cell-constraint-graph.png}
+    \centering
+    \includegraphics[width=0.95\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/7-single-cell-constraint-graph.pdf}
     \caption[Short figure name.]{We model the constraints as graphs. (a) A shear cell is represented as 2 subgraphs that model the 2 independently moving adjacent edges and the parallelism constraint of opposing edges. (b) A rigid cell is a complete graph, showing that one edge defined the entire cell.
     \label{fig:7-single-cell-constraint-graph}}
 \end{figure}
@@ -131,12 +132,12 @@ We think of the degrees of freedom (DoF) as a set of edge vectors that can be tr
 We build the entire constraint graph by connecting the constraints of single cells shown in Figure \ref{fig:7-single-cell-constraint-graph} to their neighbor cells, based on coinciding edges. For example, Figure \ref{fig:8-constraint-graph} shows how to proceed for a metamaterial with 4 cells. We start at the lower left cell and add its vertical edges to the constraint graph. The cell to the right shares the middle vertical edge, thus we link its other vertical edge to the graph, because they need to remain parallel. The two shear cells on the right are processed analogously.  The rigid cell, which cannot change its angle, effectively couples edges of the top right and lower left cell. Due to the parallelism constraints, entire rows and columns are linked. 
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/8-constraint-graph.png}
-    \caption[Short figure name.]{We build the constraint graph by connecting the single cell con-straints to their neighbor cells based on coinciding edges. 
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/8-constraint-graph.pdf}
+    \caption[Short figure name.]{We build the constraint graph by connecting the single cell constraints to their neighbor cells based on coinciding edges. 
     \label{fig:8-constraint-graph}}
 \end{figure}
 
-The notion of degree of freedom generalizes to entire mechanisms. The final graph in our example consists of 3 connected components, which tells us that the configuration has 3 DoF. Knowing one edge vector in each component uniquely determines all other edge vectors and thereby the whole mechanism. Therefore, we can formulate an optimization problem only involving 3 instead of 12 edges. We will provide details on this idea in Section \ref{section:optimization}. 
+The notion of degree of freedom generalizes to entire mechanisms. The final graph in our example consists of 3 connected components, which tells us that the configuration has 3 DoF. Knowing one edge vector in each component uniquely determines all other edge vectors and thereby the whole mechanism. Therefore, we can formulate an optimization problem only involving 3 instead of 12 edges. We will provide details on this idea in Section~\ref{section:optimization}. 
 
 In a cell grid that consists only of shear cells, the edges in each row and column represent one connected component each. The maximal number of degrees of freedom on an empty $n \times m$ grid is therefore $n+m$. Introducing a rigid cell joins the components of a row and a column into one, reducing the number of degrees of freedom by one.
 
@@ -148,7 +149,7 @@ So far, we only considered relative transformations of edges, i.e., edges are tr
 Anchoring an edge in a cell configuration reduces its degrees of freedom by one. The same reasoning as for transforming edges, as discussed above, applies; since one edge of a connected component is defined (here, fixed to the ground), all edges in the component are defined. Furthermore, anchors define the scaling of an output path. As shown in Figure \ref{fig:9-anchor-effects}a, the length of the target paths is proportional to the distance between the anchors and the target vertices. Figure \ref{fig:9-anchor-effects}b illustrates, that anchors define a global rotation point.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/9-anchor-effects.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/9-anchor-effects.pdf}
     \caption[Short figure name.]{The anchor placement influences (a) the scaling of the output path and (b) the global rotation. 
     \label{fig:9-anchor-effects}}
 \end{figure}
@@ -160,15 +161,17 @@ Anchoring an edge in a cell configuration reduces its degrees of freedom by one.
 Since each cell on a $n\times m$ grid can have 2 states, rigid or shearing, we have $2^{nm}$ different possible configurations. However, not all configurations will generate a unique mechanism since shearing cells can become rigid because of the constraints. Consider the mechanism in Figure \ref{fig:10-non-shearing-constraint-graph}. The constraint graph reveals that the green and blue cells cannot shear. This is the case when \textit{all edges} of a cell are contained in the \textit{same connected component}. Since the rotation of both potentially independent edges of the shear cell are defined by the same connected component, their angle is constraint to the original 90° and can thus not shear.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/10-non-shearing-constraint-graph.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/10-non-shearing-constraint-graph.pdf}
     \caption[Short figure name.]{It might be non-obvious how many DoF this metamaterial has. Our constraint graph reveals that it contains 2 cells that cannot shear, i.e., the blue and the green one, leaving only 2 DoF.
     \label{fig:10-non-shearing-constraint-graph}}
 \end{figure}
 
-Since the blue and green cells cannot shear, the two cell configurations in Figure \ref{fig:10-non-shearing-constraint-graph} are equivalent. We only want to consider \textit{unique mechanisms} in our optimization. But how many of these unique mechanisms exist? To answer this question, we enumerate all possible connected component configurations. It is indeed possible to give an explicit formula for the number of all unique mechanisms on a $n \times m$ grid. We present the derivation of this function in \todo{Appendix A}. and empirically verified the formula for all configurations on grids with $n<5$. In Figure \ref{fig:11-search-space-reduction}, we show the number of all $2^{nn}$ mechanisms (blue) along with the number of unique mechanisms (red). While this number still grows rapidly with increasing grid size it reduces the space of configurations on a grid from growing quadratically with respect to n in the log-plot to linearly, which is already significantly better. This enables us to consider much larger grids when searching for mechanisms with certain properties. 
+Since the blue and green cells cannot shear, the two cell configurations in Figure \ref{fig:10-non-shearing-constraint-graph} are equivalent. We only want to consider \textit{unique mechanisms} in our optimization. But how many of these unique mechanisms exist? To answer this question, we enumerate all possible connected component configurations. It is indeed possible to give an explicit formula for the number of all unique mechanisms on a $n \times m$ grid. 
+We present the derivation of this function in Appendix \ref{appendix:unique-mechanisms}. Here, we show the empirical verification the formula for all configurations on grids with $n<5$. 
+In Figure \ref{fig:11-search-space-reduction}, we show the number of all $2^{nn}$ mechanisms (gray) along with the number of unique mechanisms (blue). While this number still grows rapidly with increasing grid size it reduces the space of configurations on a grid from growing quadratically with respect to n in the log-plot to linearly, which is already significantly better. This enables us to consider much larger grids when searching for mechanisms with certain properties. 
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/11-search-space-reduction.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/11-search-space-reduction.pdf}
     \caption[Short figure name.]{The number of all configurations (log scale) on a square grid com-pared to the number of all unique mechanisms. 
     \label{fig:11-search-space-reduction}}
 \end{figure}
@@ -203,14 +206,14 @@ To simulate the deformation, we find a minimizer of $D$ with respect to the foll
 Note that we do not have to enforce that edges are parallel in shear cells or that rigid cells maintain their interior angles. These constraints are already built into the reduced representation and each state vector induces a valid cell layout. This constitutes another advantage over the direct approach where these constraints have to be taken into account explicitly.
 
 Unfortunately, the energy and the constraints are non-linear and non-convex. However, the constraints are only quadratic and they can be analytically differentiated. The energy $D$ can also be analytically differentiated albeit yielding more complex terms due to the calculation of angles from edge vectors.
-We solve the problem of minimizing D subject to C1-C4 by employing the non-linear interior point solver IPOPT \todo{[46]}, which gives us a configuration for a specific handle position. To simulate the full deformation, we sample the desired handle path and find the correct configuration by solving the optimization problem starting from the previous configuration as an initial guess.
+We solve the problem of minimizing D subject to C1-C4 by employing the non-linear interior point solver IPOPT \cite{Waechter2006}, which gives us a configuration for a specific handle position. To simulate the full deformation, we sample the desired handle path and find the correct configuration by solving the optimization problem starting from the previous configuration as an initial guess.
 
 
 \subsection{Invalid input}
 
 The range of the handle corner is limited by the structure of the mechanism, which is fixed by anchors. If a handle position outside this range is prescribed the optimization problem has no solution because C4 cannot be satisfied. To yield an approximate result even for these situations we try to find a handle position, which is close to the desired one but in the range of the handle. To this end we solve another optimization problem minimizing the distance of the updated handle position ${\widetilde{P}}_h$ to the prescribed one $P_h$:
 
-$$D\prime\left(x\right)=Ph-Ph2,$$
+$$D\prime\left(x\right)=\left \| {\widetilde{P}}_h-P_h \right \|^2,$$
 
 subject to the constraints C1-C3. The resulting configuration is one that is valid and places the handle close to the desired position. However, the solution represents only one valid configuration, which will not minimize D in general. We therefore optimize $D$ with respect to C1-C4 using the new handle constraint.
 
@@ -220,7 +223,7 @@ subject to the constraints C1-C3. The resulting configuration is one that is val
 As a preliminary evaluation of the simulation, we manually created 3 mechanisms with different inputs in our software and manufactured them from laser cut acrylic and 3D printed hinges (Ninjaflex filament). We tracked the motion of the physical mechanisms using OptiTrack with up to 7 markers on each mechanism and compared it with motion paths from our simulation. We adjusted the OptiTrack data to account for scaling. Figure \ref{fig:12-optitrack-evaluation} shows at one example that the recorded and simulated data matched closely. These experiments support that the results of our simulation match the behavior of physical mechanisms.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/12-optitrack-evaluation.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/12-optitrack-evaluation.pdf}
     \caption[Short figure name.]{Example of our evaluation. The green path represents the paths from our simulation, blue is the data from OptiTrack.
     \label{fig:12-optitrack-evaluation}}
 \end{figure}
@@ -235,11 +238,11 @@ We aim to alleviate the problem of finding suitable configuration of cells given
 
 Our algorithm takes a set of user-defined input and output paths as well as a rough shape of the desired device as input. Our algorithm aims to find a close-to-optimal fit between the motion of the mechanism and the user-defined paths. Generally, input paths are actuated (e.g., by users) and the mechanism transforms this motion to the output path. In context of the optimization, however, we do not need to differentiate between input and output paths but use them as a list of paths which a mechanism should be able to reproduce. As a first step in our algorithm, we automatically determine the positions of the anchors for the cell configuration based on the scale and direction of the paths. We then generate a mechanism that produces the desired motion. An overview of the algorithm is illustrated in Figure \ref{fig:13-optimization-overview}.
 
-Since the behavior of a mechanism is non-linear, we create cell configurations using stochastic optimization, specifically Simulated Annealing \todo{[21][22]}. Instead of modifying the cell configuration directly, we modify the constraint graph, i.e., split and merge connected components until the algorithm converges. To speed up computation, we resort to a hierarchical approach where we first find an optimum configuration for scaled-down versions of the mechanism and use this configuration as seed for larger versions. The output of the algorithm is a cell configuration that produces the desired paths.
+Since the behavior of a mechanism is non-linear, we create cell configurations using stochastic optimization, specifically Simulated Annealing \cite{Ram1996, Kirkpatrick1983}. Instead of modifying the cell configuration directly, we modify the constraint graph, i.e., split and merge connected components until the algorithm converges. To speed up computation, we resort to a hierarchical approach where we first find an optimum configuration for scaled-down versions of the mechanism and use this configuration as seed for larger versions. The output of the algorithm is a cell configuration that produces the desired paths.
 
 \begin{figure} [!h]
     \centering
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/13-optimization-overview.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/13-optimization-overview.pdf}
     \caption[Short figure name.]{Overview of the process of automatically finding cell patterns given user-specified paths.
     \label{fig:13-optimization-overview}}
 \end{figure}
@@ -281,7 +284,7 @@ $$\min_j{\sum_{i=0}^{m}{\omega_i \left| P_i-C_j \left( P_i \right) \right|.}}$$
 
 $\omega_i\in\left[0,1\right],\ \ i=0mωi≔1$ are user-defined weighting factor for the individual paths. In our implementation, we typically use equal weights for input and output path (i.e., 0.5 for 2 paths).
 
-A trivial approach to the problem would be to randomly sample cell configurations (i.e., switching cell types randomly) and choose the best fit between the user-defined paths and the paths the mechanism produces. This, however, is not feasible, as discussed in Section \ref{section:search-space}, given the large number of possible cell configurations that yield similar movements or are rigid. 
+A trivial approach to the problem would be to randomly sample cell configurations (i.e., switching cell types randomly) and choose the best fit between the user-defined paths and the paths the mechanism produces. This, however, is not feasible, as discussed in Section~\ref{section:search-space}, given the large number of possible cell configurations that yield similar movements or are rigid. 
 
 In our approach, instead of modifying the cell configuration directly, we manipulate the underlying constraint graph with respect to the degrees of freedom of a configuration. We typically aim for a configuration with as little degrees of freedom as possible that still can reproduce a path well. A too low number of degrees of freedom would not allow for complex motion (e.g., with changes in direction). A too high number of degrees of freedom would lead to mechanically unstable structures. Therefore, we constrain a configuration to be within ${DoF}_{min}$ and ${DoF}_{max}$, which are typically chosen to be 2 and 5, respectively. 
 
@@ -312,7 +315,7 @@ We randomized a small number of ground truth examples to evaluate if the optimiz
 Note that the cell configuration, the anchors and the target resolution were not known to the optimization but were generated.
 
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/15-groundtruth-test.png}
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/15-groundtruth-test.pdf}
     \caption[Short figure name.]{Two of ten ground truth examples (top) we used to test the optimization. The results in the bottom were generated without inputting the cell configuration or position of the anchors into the optimization procedure.
     \label{fig:15-groundtruth-test}}
 \end{figure}
@@ -320,45 +323,45 @@ Note that the cell configuration, the anchors and the target resolution were not
 
 \subsection{Implementation}
 
-While we already discussed the optimization and simulation in previous sections, we want to briefly mention the frameworks we used. We packed the metamaterial mechanism optimization, as described above, into a simple editor. The editor allows users to draw the shape of their desired mechanism and to set input and output paths, which the software will optimize for. Users can use pre-defined paths for precise motion constraints or simply draw rough paths. Time needed to generate a cell configuration depends on whether the solution requires a high-resolution configuration. If the solution is found in a low-resolution grid, the algorithm takes approximately 1 minute to converge on a commodity notebook (MacBook Pro 2015 with Bootcamp). For higher resolutions (e.g., 32 x 32 cells), finding the best solution takes up to 10 minutes. We are confident that we this time can be decreased by parallelizing parts of the algorithm, e.g., running multiple threads of Simulated Annealing at once. The editor is implemented in C\# and uses the .NET framework 4.5. We use the Windows Presentation Foundation (WPF) as our GUI toolkit. The optimization procedure is also implemented in C\#, which calls a wrapper to our C++ simulation tool. The simulation is written in C++, because it uses IPOPT \todo{[46]}, as we discussed in Section \ref{section:simulation}. We will provide the source code prior to the conference.
+While we already discussed the optimization and simulation in previous sections, we want to briefly mention the frameworks we used. We packed the metamaterial mechanism optimization, as described above, into a simple editor. The editor allows users to draw the shape of their desired mechanism and to set input and output paths, which the software will optimize for. Users can use pre-defined paths for precise motion constraints or simply draw rough paths. Time needed to generate a cell configuration depends on whether the solution requires a high-resolution configuration. If the solution is found in a low-resolution grid, the algorithm takes approximately 1 minute to converge on a commodity notebook (MacBook Pro 2015 with Bootcamp). For higher resolutions (e.g., 32 $\times$ 32 cells), finding the best solution takes up to 10 minutes. We are confident that we this time can be decreased by parallelizing parts of the algorithm, e.g., running multiple threads of Simulated Annealing at once. The editor is implemented in C\# and uses the .NET framework 4.5. We use the Windows Presentation Foundation (WPF) as our GUI toolkit. The optimization procedure is also implemented in C\#, which calls a wrapper to our C++ simulation tool. The simulation is written in C++, because it uses IPOPT \cite{Waechter2006}, as we discussed in Section~\ref{section:simulation}. We will provide the source code prior to the conference.
 
 \subsection{Limitations of the design tool}
 
-The editing capabilities of our editor are currently limited to 2D. Furthermore, we implemented only square cells so far. Triangular, rotated, or pre-sheared cells, as suggested in [18] are not integrated in the current version of the editor. However, this would be a simple extension.  We also currently don’t offer mesh export options, as we focused on the optimization. A conceivable option would be to implement the tool as a plugin to existing CAD tools, e.g., Autodesk Fusion 360, as they offer elaborate modeling options for the parts that embed the metamaterial.
+The editing capabilities of our editor are currently limited to 2D. Furthermore, we implemented only square cells so far. Triangular, rotated, or pre-sheared cells, as suggested in Section~\ref{section:shear-cell} are not integrated in the current version of the editor. However, this would be a simple extension.  We also currently don’t offer mesh export options, as we focused on the optimization. A conceivable option would be to implement the tool as a plugin to existing CAD tools, e.g., Autodesk Fusion 360, as they offer elaborate modeling options for the parts that embed the metamaterial.
 
 
 \section{Examples}
 
-The main contribution of this work is the abstract representation of metamaterial mechanisms, which ultimately allows an automatic generation of such metamaterials. While the device that embeds the metamaterial is not the focus of this work, we want to give some brief examples of how our generated metamaterials might be embedded in a device-context. This work allows to create new types of mechanisms, which experts of mechanism design can add to their repertoire. The examples here are merely intended to foster future discussion and research of monolithic cell-based mechanisms. More transformations are listed as examples in Appendix B, for manufactured results please refer to the supplemental video.
+The main contribution of this work is the abstract representation of metamaterial mechanisms, which ultimately allows an automatic generation of such metamaterials. While the device that embeds the metamaterial is not the focus of this work, we want to give some brief examples of how our generated metamaterials might be embedded in a device-context. This work allows to create new types of mechanisms, which experts of mechanism design can add to their repertoire. The examples here are merely intended to foster future discussion and research of monolithic cell-based mechanisms. More transformations are listed as examples in Appendix \ref{appendix:example-transformations}.
 
-\paragraph{Kinetic sculptures.} One example, where metamaterial mechanisms might be embedded into, are kinetic sculptures, toys, or walking automata [44]. As shown in Figure \ref{fig:16-examples-01-walker}, our design tool enables users to create custom walk-cycles from metamaterials. 
+\paragraph{Kinetic sculptures.} One example, where metamaterial mechanisms might be embedded into, are kinetic sculptures, toys, or walking automata \cite{Thomaszewski2014}. As shown in Figure \ref{fig:16-examples-walker}, our design tool enables users to create custom walk-cycles from metamaterials. 
 
-\begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/16-examples-01-walker.png}
+\begin{figure} [h!]
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/16-examples-walker.pdf}
     \caption[Short figure name.]{Embedding metamaterial mechanisms into kinetic sculptures. 
-    \label{fig:16-examples-01-walker}}
+    \label{fig:16-examples-walker}}
 \end{figure}
 
-\paragraph{Custom mechanisms.} Users might also want to create grippers with a custom motion path. In Figure \ref{fig:17-examples-02-oscillating}, we illustrate embedding metamaterial mechanisms with different motion paths as grippers for collecting items, e.g., for picking-challenge robots. Other applications for such custom paths that come to mind are, e.g., fans with a path cycle, or deflectors for sprinkler which can be customized to sprinkle a specific area optimally.
+\paragraph{Custom mechanisms.} Users might also want to create grippers with a custom motion path. In Figure \ref{fig:17-examples-gripper}, we illustrate embedding metamaterial mechanisms with different motion paths as grippers for collecting items, e.g., for picking-challenge robots. Other applications for such custom paths that come to mind are, e.g., fans with a path cycle, or deflectors for sprinkler which can be customized to sprinkle a specific area optimally.
 
-\begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/17-examples-02-oscillating.png}
+\begin{figure} [h!]
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/17-examples-gripper.pdf}
     \caption[Short figure name.]{Example of metamaterial mechanisms as gripper with custom motions for, e.g., robots.
-    \label{fig:17-examples-02-oscillating}}
+    \label{fig:17-examples-gripper}}
 \end{figure}
 
-\paragraph{Clock.} Another simple example is an alarm clock, as depicted in Figure \ref{fig:18-examples-03-gripper}. The metamaterial transforms a rotary input into an oscillating motion to strike the bells.
+\paragraph{Clock.} Another simple example is an alarm clock, as depicted in Figure \ref{fig:18-examples-oscillating-clock}. The metamaterial transforms a rotary input into an oscillating motion to strike the bells.
 
-\begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/18-examples-03-gripper.png}
+\begin{figure} [h!]
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/18-examples-oscillating-clock.pdf}
     \caption[Short figure name.]{A simple example is embedding an oscillating metamaterial into an alarm clock.
-    \label{fig:18-examples-03-gripper}}
+    \label{fig:18-examples-oscillating-clock}}
 \end{figure}
 
 
 \section{Discussion \& outlook}
 
-Our work aims at providing an understanding of metamaterial mechanisms and go beyond purely exploratory work. Our work opens way for researchers to explore, build and use such mechanisms. Moving away from a representation that is based on cells to a higher level---the constraint graph---allowed us to significantly reduce the space of cell configurations, making computational approaches feasible. Note that while the search space is highly reduced, it is still not feasible to fully enumerate the space. As discussed above, a cell configuration of 9 $\times$ 9 cells yields $10^12$ unique transformations (but $10^24$ cell configurations). We are confident, however, that our work informs the research in the space and can provide a foundation to make metamaterial mechanisms accessible to a broader audience. 
+Our work aims at providing an understanding of metamaterial mechanisms and go beyond purely exploratory work. Our work opens way for researchers to explore, build and use such mechanisms. Moving away from a representation that is based on cells to a higher level---the constraint graph---allowed us to significantly reduce the space of cell configurations, making computational approaches feasible. Note that while the search space is highly reduced, it is still not feasible to fully enumerate the space. As discussed above, a cell configuration of 9 $\times$ 9 cells yields $10^{12}$ unique transformations (but $10^{24}$ cell configurations). We are confident, however, that our work informs the research in the space and can provide a foundation to make metamaterial mechanisms accessible to a broader audience. 
 
 
 \subsection{Limitations and considerations}
@@ -379,7 +382,7 @@ The constraint graph is based on the fact that a cell that is constraint in leng
 
 \begin{figure} [h]
     \centering
-    \includegraphics[width=0.85\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/19-3D-grid.png}
+    \includegraphics[width=0.65\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/19-3D-grid.png}
     \caption[Short figure name.]{Preview of a 3D deformed mechanism with 2 rigid cells.
     \label{fig:19-3D-grid}}
 \end{figure}
@@ -396,11 +399,12 @@ We used an idealized simulation that does not incorporate engineering factors su
 Many practical applications such as a multi-legged Jansen walker or a robotic gripper require that multiple layers of mechanisms move in concert with each other, i.e., they use same coinciding input.  While our current editor only supports a creating a single layer at a time, they could be merged using any CAD tool.
 
 \subsubsection{Extending to different cell types}
-Our constraint graph, and consequently our optimization algorithm, hold true for other cell suggested in [18], such as rotated and pre-sheared cells. Our editor only needs to be extended slightly to edit such cells.
+Our constraint graph, and consequently our optimization algorithm, hold true for other cell suggested previously in Section~\ref{section:shear-cell}, such as rotated and pre-sheared cells. Our editor only needs to be extended slightly to edit such cells.
  
 \begin{figure} [h]
-    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/20-generalized-2D-constraint-graph.png}
-    \caption[Short figure name.]{Our constraint graph generalizes to the cells we introduces in Section \ref{section:shear-cell}.
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/20-generalized-2D-constraint-graph.pdf}
+    \caption[Short figure name.]{Our constraint graph generalizes to the cells we introduces in Section~\ref{section:shear-cell}.
     \label{fig:20-generalized-2D-constraint-graph}}
 \end{figure}
 
@@ -415,8 +419,24 @@ We analyzed metamaterial mechanisms with respect to their topological constraint
 On a higher level, we think of our work as the first step towards what we like to call \textit{heterogenous mechanical metamaterials}. We define them as metamaterials that consist of \textit{different types} of cells. Most often metamaterials consist of cells that are topologically equivalent; all cells have the same function, but they can vary in parameter. Metamaterial mechanisms is one example of a material that consists of \textit{topologically different cells}. They exhibit interesting behavior yet the interactions between cells are hard to understand. In the future, we will go step-wise towards investigating more of these heterogenous metamaterials by creating generic tools that allow researchers to investigate combinations of different types of cells from related work. 
 
 
+\section{Appendix A: Enumerating all unique mechanisms}
+\label{appendix:unique-mechanisms}
 
+As noted in Section~\ref{section:search-space}, all edges in a row or column necessarily belong to a single connected component. Starting with an empty $n \times m$ grid we have $n+m$ connected components. Introducing a rigid cell joins two connected components and removes one degree of freedom. Suppose we want to enumerate all unique mechanisms with $k$ degrees of freedom. This amounts to $k$ connected components where we differentiate between $x$ empty columns, $y$ empty rows and $z$ components formed by merging rows and columns using rigid cells. There are $\binom{n}{x}$ ways to choose the columns and $\binom{m}{y}$ ways to choose the rows. The remaining $m-y$ rows and $n-x$ columns can be arbitrarily partitioned into $z$ sets. The Stirling number of the second kind counts the number of these partitions as $S(n-x,\ z)$ and $S(m-y,z)$ where we use the convention $S\left(a,b\right)=0$ for $a<b$. The $z$ sets of rows and columns can be connected in $z!$ ways. This gives 
+$$G^{n,m}\left(x,y,z\right)=\ \binom{n}{x}\ \binom{m}{y}S\left(n-x,\ z\right)\ S\left(m-y,z\right)\ z!$$
+different possibilities. Summing over all values for $x,\ y$ and $z$ we obtain the number of all possible unique mechanisms on a $n \times m$ grid. We empirically verified this number by analyzing all possible configurations on grids with $n<5$.
 
+\pagebreak
+
+% \appendix
+
+\section{Appendix B: Example transformations}
+\label{appendix:example-transformations}
+\begin{figure} [h!]
+    \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/21-optimization-results.pdf}
+    \caption[Short figure name.]{Examples of auto-generated metamaterial mechanisms.
+    \label{fig:21-optimization-results}}
+\end{figure}
 
 
 % \begin{figure} [h]

@@ -41,7 +41,7 @@
 \RequirePackage{xcolor}
 \definecolor{Crimson}{rgb}{0.6471, 0.1098, 0.1882}
 % \definecolor{highlightcolor}{rgb}{0.8863, 0.4078, 0.1176} % HPI mid orange
-\definecolor{titlecolor}{rgb}{0.6, 0.6, 0.6} 
+\definecolor{titlecolor}{rgb}{0.3, 0.3, 0.3} 
 
 % \definecolor{highlightcolor}{HTML}{e2681d} % HPI mid orange
 % \definecolor{highlightcolor}{HTML}{f9a61a} % HPI light orange
@@ -194,6 +194,7 @@
 \def\degreemonth#1{\gdef\@degreemonth{#1}}
 \def\degree#1{\gdef\@degree{#1}}
 \def\advisor#1{\gdef\@advisor{#1}}
+\def\secondaryadvisor#1{\gdef\@secondaryadvisor{#1}}
 \def\department#1{\gdef\@department{#1}}
 \def\field#1{\gdef\@field{#1}}
 \def\university#1{\gdef\@university{#1}}
@@ -296,7 +297,10 @@
 	\vspace{40pt}
 	\begin{center}
 	% \Huge 
-	\fontsize{36}{40}\textcolor{titlecolor}{\textit{\thetitle}} \normalsize \\
+	% \fontsize{36}{40}\textsf{\textcolor{titlecolor}{\thetitle}} 
+	% \normalsize \\
+	\fontsize{36}{40}\textcolor{titlecolor}{\textit{\thetitle}} 
+	\normalsize \\
 	% \fontsize{36}{40}\textcolor{highlightcolor}{\textit{\thetitle}} \normalsize \\
 	
 	\vspace{25pt}
@@ -312,8 +316,9 @@
 	{\Large \@degree} \\
 
 	\vspace{25pt}
-	advised by\\
-	\@advisor \\
+	advised by:\\
+	Main Advisor: \@advisor \\
+	Secondary Advisor: \@secondaryadvisor \\
 	%\@department \\
 
 	\vspace{75pt}
@@ -375,6 +380,13 @@
 	\newpage \rm
 	}
 
+\newcommand{\declarationpage}{
+	\chapter*{Declaration}
+	\noindent \input{frontmatter/declaration}
+	\vspace*{\fill} 
+	\newpage \rm
+	}
+	
 % the list of authors
 \newcommand{\authorlist}{
 	%\pagestyle{fancy}

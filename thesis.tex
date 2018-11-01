@@ -9,18 +9,20 @@
 
 % the front matter
 \input{frontmatter/coverpage}
+
 \pagenumbering{roman}
 \maketitle
+
 % \copyrightpage
 \dedicationpage
 \abstractpage
 \zusammenfassung
 \acknowledgments
 
-
 \singlespacing
 
 \publicationspage
+\declarationpage
 %\listoffigures
 
 % \include{_TODOs}
@@ -30,6 +32,7 @@
 %\authorlist
 
 \onehalfspacing
+
 \pagenumbering{arabic}
 
 \include{chapters/1-introduction}
@@ -47,7 +50,7 @@
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{References}
-\bibliography{references}
+\bibliography{__references}
 \bibliographystyle{plainnat}
 %\include{endmatter/colophon}
 

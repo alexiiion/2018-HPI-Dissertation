@@ -16,7 +16,7 @@
 
 Personal fabrication machines, such as 3D printers, have increasing impact on many areas including academia, aerospace industry, clothing or simply end-user products. The reason why 3D printing is so influential is that, in contrast to other manufacturing technologies such as CNC milling, molding, forming or laser cutting, 3D printing is the only technology that allows us to \textit{arrange matter freely in space.} A 3D printer is a generic machine that creates a physical representation of potentially any digital 3D model that users design. Such machines usually start with an empty build space and build up the object layer by layer. Due to this layer-by-layer approach the tool head that extrudes material always has access to the object and can dispose material anywhere on top of the last layer, which allows for arbitrary complexity. 
 
-Naturally, the first 3D prints revolved around arbitrary shapes. However, researchers quickly found that by leveraging the freedom in material arrangement and altering how the material on the inside of objects is distributed enables unique physical properties in their printed artifacts.
+Naturally, the first 3D prints revolved around arbitrary shapes. However, researchers quickly found that by leveraging the freedom in material arrangement and altering how the material on the inside of objects is distributed, unique physical properties in their printed artifacts are enabled.
 
 
 
@@ -33,7 +33,7 @@ Naturally, the first 3D prints revolved around arbitrary shapes. However, resear
 
 \subsubsection{From the outside shape...}
 
-Researchers in human-computer interaction started early on to investigate fabrication systems that are accessible for novice users. They reduced the hurdle of designing 3D models by presenting sketch-based CAD tools. Furthermore, researchers also enabled interactive fabrication systems by allowing users to directly interact with the machine \cite{Willis2011a, Mueller2012a, Peng2016}, increasing iteration cycles \cite{Mueller2014, Mueller2014a}, use real-world objects for content creation \cite{Weichel2014, Weichel2015}, embed mechanisms \cite{Zhang2017} and electronics \cite{Weichel2013, Ledo2017}, or even fabricate things on the go \cite{Roumen2016}. These were mainly concerned with creating the outside shape of 3D models.
+Researchers in human-computer interaction started early on to investigate fabrication systems that are accessible for novice users. They reduced the hurdle of designing 3D models by presenting sketch-based CAD tools. Furthermore, researchers also enabled interactive fabrication systems by allowing users to directly interact with the machine \cite{Willis2011a, Mueller2012a, Peng2016}, increasing the number of iteration cycles \cite{Mueller2014, Mueller2014a}, use real-world objects for content creation \cite{Weichel2014, Weichel2015}, embed mechanisms \cite{Zhang2017} and electronics \cite{Weichel2013, Ledo2017}, or even fabricate things on the go \cite{Roumen2016}. These were mainly concerned with creating the outside shape of 3D models.
 
 
 \subsubsection{to internal material distribution...}
@@ -81,7 +81,7 @@ To instantiate this concept of metamaterial devices, we took inspiration from th
 
 Figure \ref{fig:1-overview-input-process-output-model} illustrates the core areas that we investigated in this thesis: we show (1) how we process \textit{analog} information in the context of metamaterials that transform forces and movements input by the user into a different set of forces and movement (i.e., mechanisms, (2) a system of cells that process information \textit{digitally}, and (3) cells that output information to the user or interface with the environment by appropriating dynamic textures.
 
-Since designing such complex systems of cell structures is difficult, we focus our work on providing accessible software to enable users to create such metamaterial devices.
+Since designing such complex systems of cell structures is difficult, we additionally focus our work on providing accessible software to enable users to create such metamaterial devices.
 
 % \begin{enumerate}
 %     \item We integrate mechanisms within the material structure. Such metamaterial mechanisms consist of a single block of material the cells of which play together in a well-defined way in order to achieve macroscopic movement. This allows us to implement, e.g. a door latch, pliers, or a drawing machine from only one piece, without moving parts. 
@@ -103,12 +103,32 @@ Figure \ref{fig:2-overview-metamaterial-mechanisms} shows an example of a metama
 
 \begin{figure} [h] %[h!|H]
     \centering
-    \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/2-overview-metamaterial-mechanisms.pdf}
-    \caption[Short figure name.]{(a) This door latch demonstrates a metamaterial device that transforms user input, i.e., pushing down the handle, (b) to pulling the latch inwards. (c) We developed a custom editor to enable the design of such analog metamaterial devices.
+    % \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/2-overview-metamaterial-mechanisms.pdf}
+    \includegraphics[width=1\textwidth]{chapters/introduction-FIG/2-overview-metamaterial-mechanisms.pdf}
+    \caption[Short figure name.]{(a) This door latch demonstrates a metamaterial device that transforms user input, i.e., pushing down the handle, (b) to pulling the latch inwards. (c) We developed a custom editor to assist their design.
     \label{fig:2-overview-metamaterial-mechanisms}}
 \end{figure}
 
 
+The design of metamaterial mechanisms is highly challenging and the extent of mechanisms that can be realized with metamaterials remains unclear. 
+We show in Figure \ref{fig:2-1-understanding-constraint-interaction} how a small change can lead to a vastly different output. 
+The reason is that a mechanism consists of many cells that are interconnected and impose constraints on each other, the behaviour of the cell structure is unobvious and non-linear. 
+To enable novice users to design such metamaterial mechanisms, we implemented a computational design tool takes user-drawn paths as input and optimizes the cell configuration which implements the transformation. 
+
+To achieve this, we dig deeper into the underlying topological constraints of such cell structures and their influence on the resulting mechanism. 
+We find that by representing the constraints as a graph we can easily distinguish unique cells configuration. 
+For example, Figure \ref{fig:2-1-understanding-constraint-interaction} illustrates that one cell can prevent 7 cells from shearing such that any permutation within these 7 cells creates the same output. 
+We bypass these $2^7 = 128$ configurations by only operating on the constraint graph (i.e., merging and splitting connected components), which reduces our search space by several orders of magnitude and ultimately enables such an automatic tool.
+
+% We present an abstraction of the underlying cell structures as a constraint graph, which informs the design of metamaterial mechanisms. For example, we discover that non-linear mechanical transformations can be realized. Based on these findings, we contribute a computational design tool that automatically creates a metamaterial mechanism from user-defined input and output motion paths. This tool is only feasible, because our constraint graph representation highly reduces the search space of possible arrangements of cells. 
+
+\begin{figure} [h] %[h!|H]
+    \centering
+    \includegraphics[width=1\textwidth]{chapters/introduction-FIG/2-1-understanding-constraint-interaction.png}
+    % \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/2-1-understanding-constraint-interaction.png}
+    \caption[Short figure name.]{(a) In this example, (b) setting one cell rigid (c) prevents 7 cells from shearing, which changes the output drastically. (c) The green input path from (a) cannot be followed anymore.
+    \label{fig:2-1-understanding-constraint-interaction}}
+\end{figure}
 
 
 \subsection{Processing digital signals}
@@ -119,7 +139,8 @@ To explore this concept, we introduce a new type of cell that propagates a digit
 
 \begin{figure} [h] %[h!|H]
     \centering
-    \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/3-overview-digital-metamaterials.pdf}
+    \includegraphics[width=1\textwidth]{chapters/introduction-FIG/3-overview-digital-metamaterials.pdf}
+    % \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/3-overview-digital-metamaterials.pdf}
     \caption[Short figure name.]{(a) This combination door lock consists of cells that process the code and (b) only unlock the latch if users input the correct code. (c)~Internally, the lock consists of that implement (1) signal validation, (2) logic gates, (3) signal routing, (4) bifurcation, and (5) amplification.
     \label{fig:3-overview-digital-metamaterials}}
 \end{figure}
@@ -134,7 +155,8 @@ We apply the main idea behind metamaterials, i.e., subdivision into a large numb
 
 \begin{figure} [h]
     \centering
-    \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/4-overview-textures.pdf}
+    \includegraphics[width=1\textwidth]{chapters/introduction-FIG/4-overview-textures--2.pdf}
+    % \includegraphics[width=0.85\textwidth]{chapters/introduction-FIG/4-overview-textures.pdf}
     \caption[Short figure name.]{When an external force is applied, metamaterial textures undergo a controlled transformation. This door handle, transforms (a) from flat (b) to rippled (c) to spiky, allowing the person behind the door to set a tactile message with three levels of enter/busy/do not enter messages for visually impaired or sighted users trying to enter.
     \label{fig:4-overview-textures}}
 \end{figure}
@@ -143,22 +165,24 @@ We apply the main idea behind metamaterials, i.e., subdivision into a large numb
 
 \section{Contributions}
 
-\textit{The concept of metamaterial devices.} \enspace The main contribution of this thesis is that we apply a radically different thinking to metamaterials. While this emerging field already demonstrated that materials with extreme properties can be engineered by designing their cell structure, we push this further and argue that we can engineer material properties as to function as \textit{devices}. 
+\textit{The concept of metamaterial devices.} \enspace The main contribution of this thesis is that we apply a radically different thinking to metamaterials. While this emerging field already demonstrated that materials with extreme properties can be engineered by designing their cell structure, we push this further and argue that we can engineer material properties to function as \textit{devices}. 
 
 \textit{Applications and design space.} \enspace We investigated the potential impact and relevance of such metamaterial devices by exploring and building tangible prototypes that can be experiences. These demonstrations inform the potential design space for such devices.
 
 \textit{Cell designs.} \enspace We also contribute a set of cells that enable the realization of metamaterial devices. Our cells include cells that enable a well-defined movement for transmitting forces between cells, they include cells that enable the processing and validation of digital signal and cells that change their outside to interface with the user and the environment.
 
-\textit{Software.} \enspace Lastly, to enable users to create such metamaterial devices, we contribute easily accessible\footnote{open source editor for Metamaterial Mechanisms: \url{https://github.com/jfrohnhofen/metamaterial-mechanisms}} software tools that encapsulate our findings.
+\textit{Software.} \enspace Lastly, to enable users to create such metamaterial devices, we contribute easily accessible\footnote{open source editor for Metamaterial Mechanisms: \url{https://github.com/jfrohnhofen/metamaterial-mechanisms}} software tools that encapsulate our findings. Our software contains automatic generation of cell assemblies for novice users yet allows experts to freely edit their devices.
 
 
 
 \section{Structure of this thesis}
 
-The structure of this thesis is straight-forward. We first give the reader a deeper insight into the current state of the art regarding digital fabrication and metamaterials in \ref{chapter:related-work}. Then, in Chapter \ref{chapter:analog-metamaterials}, we introduce the concept of metamaterial mechanisms. We dive deeper into the structural properties of metamaterial mechanisms in Chapter \ref{chapter:Understanding-metamaterial-mechanisms}, where we also present a computational design tool that automates their design. We then move on to detailing the structures that enable digital metamaterial devices in \ref{chapter:digital}, before explaining how to output to the user by appropriating dynamic textures in Chapter \ref{chapter:textures}. 
+%The structure of this thesis is straight-forward. 
+We first give the reader a deeper insight into the current state of the art regarding digital fabrication and metamaterials in Chapter~\ref{chapter:related-work}. Then, in Chapter~\ref{chapter:analog-metamaterials}, we introduce the concept of metamaterial mechanisms. We dive deeper into the structural properties of metamaterial mechanisms in Chapter~\ref{chapter:Understanding-metamaterial-mechanisms}, where we also present a computational design tool that automates the generation of metamaterial mechanisms. We then move on to detailing the structures that enable digital metamaterial devices in Chapter~\ref{chapter:digital}, before explaining how to output to the user by appropriating dynamic textures in Chapter~\ref{chapter:textures}. 
 In each chapter, we demonstrate the software that enables users to create such metamaterial devices. 
 % In Chapter \ref{chapter:software}, we demonstrate the software that enables users to create such metamaterial devices. 
-Lastly, Chapter \ref{chapter:conclusion} concludes this thesis by discussing the work on a broader level. Since the concept presented in this thesis is novel it opens up future directions of research, which we will identify and discuss in the end of this thesis to leave the reader with more food for thought. 
+Lastly, Chapter~\ref{chapter:conclusion} concludes this thesis by discussing the work on a broader level. Since the concept presented in this thesis is novel, it opens up future directions of research, which we  identify and discuss to leave the reader with more food for thought. 
+%Lastly, Chapter~\ref{chapter:conclusion} concludes this thesis by discussing the work on a broader level. Since the concept presented in this thesis is novel it opens up future directions of research, which we will identify and discuss in the end of this thesis to leave the reader with more food for thought.
 
 
 
