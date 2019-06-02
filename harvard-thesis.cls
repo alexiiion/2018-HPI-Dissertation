@@ -323,11 +323,11 @@
 	\vspace{8pt}
 	{\Large \@degree} \\
 
-	\vspace{25pt}
-	advised by:\\
-	Main Advisor: \@advisor \\
-	Secondary Advisor: \@secondaryadvisor \\
-	%\@department \\
+	% \vspace{25pt}
+	% advised by:\\
+	% Main Advisor: \@advisor \\
+	% Secondary Advisor: \@secondaryadvisor \\
+	% %\@department \\
 
 	\vspace{75pt}
 	\includegraphics[width=225pt]{frontmatter/logo/logo_hpi-UP.eps} \\

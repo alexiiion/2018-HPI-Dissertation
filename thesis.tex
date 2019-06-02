@@ -9,11 +9,13 @@
 
 % the front matter
 \input{frontmatter/coverpage}
+\input{frontmatter/coverpage-back}
+
+% \pagenumbering{roman}
+% \maketitle
+% \afterpage{\blankpage}
 
 \pagenumbering{roman}
-\maketitle
-\afterpage{\blankpage}
-
 % \copyrightpage
 \dedicationpage
 \afterpage{\blankpage}
@@ -33,33 +35,35 @@
 
 % \include{_TODOs}
 
-\tableofcontents
-\clearpage % otherwise the pagenumbering starts at second page of toc
-%\authorlist
 
-\onehalfspacing
 
-\pagenumbering{arabic}
+% \tableofcontents
+% \clearpage % otherwise the pagenumbering starts at second page of toc
+% %\authorlist
 
-\include{chapters/1-introduction}
-\include{chapters/2-related-work}
-\include{chapters/3-metamaterial-mechanisms}
-\include{chapters/4-understanding-metamaterial-mechanisms}
-\include{chapters/5-digital-metamaterials}
-\afterpage{\blankpage}
-\include{chapters/6-metamaterial-textures}
-% \include{chapters/99-software-editor}
-\include{chapters/7-conclusion}
+% \onehalfspacing
 
-\singlespacing
+% \pagenumbering{arabic}
 
-% the back matter
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{References}
-\bibliography{__references}
-\bibliographystyle{plainnat}
-%\include{endmatter/colophon}
+% \include{chapters/1-introduction}
+% \include{chapters/2-related-work}
+% \include{chapters/3-metamaterial-mechanisms}
+% \include{chapters/4-understanding-metamaterial-mechanisms}
+% \include{chapters/5-digital-metamaterials}
+% \afterpage{\blankpage}
+% \include{chapters/6-metamaterial-textures}
+% % \include{chapters/99-software-editor}
+% \include{chapters/7-conclusion}
+
+% \singlespacing
+
+% % the back matter
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{References}
+% \bibliography{__references}
+% \bibliographystyle{plainnat}
+% %\include{endmatter/colophon}
 
 
 \end{document}
