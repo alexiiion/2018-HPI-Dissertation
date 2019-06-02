@@ -1,21 +1,43 @@
 \chapter{Conclusion}
 \label{chapter:conclusion}
 
-In this chapter, we expand the conclusions of the individual projects and draw conclusions of the bigger picture---the concept of metamaterial devices. We discuss how this work might impact technology and summarize our main contribution before we close by outlining future directions of metamaterial devices.
+In this chapter, we expand the insights of the individual projects and draw conclusions of the bigger picture---the concept of metamaterial devices. We discuss how this work might impact technology and summarize our main contribution before we close by discussing short-term future challenges and outlining long-term future directions of metamaterial devices.
+
+
+
+\section{Contribution}
+
+With this thesis, we extend the research fields of metamaterials, digital fabrication, and 3D modelling tools by contributing a novel approach to creating interactive devices that do not rely on electronics, but their interactivity is defined by their material structure. Such metamaterial structures are a new genre that is of higher complexity and that exploits more degrees of freedom than previous work in this field, and that allow metamaterials to tackle problems they have traditionally not been able to address. Since the entire device is defined by the architected cell structure of the material it consists of, we like to think that we blur the boundaries between materials and devices. Therefore, we see the main promise of this work in that it allows us to achieve a deeper integration between the structural and the mechanical functions of materials.
+
+On a more tangible level, we contribute different cell designs that play together to transform forces, perform simple computation, or change their outside structure. Moreover, we presented software tools that assist users in creating such devices. We also dug deeper into the structural constraints that cells exert when connected on a grid. This understanding enabled a computational design tool that generates metamaterial mechanisms for the user---and is a promising approach for the future.
+
+% \todo{add: we contribute cell design, and software, and deeper understanding, ...}
+
+% \section{Open challenges}
+
+
+% \subsubsection{Benefits \& limitations}
+
+% Compared to traditional multi-part mechanisms, metamaterial devices offer several benefits. (1) The resulting devices consist of a single part. They can thus be created using particularly simple fabrication processes, such as single-material 3D printers (e.g., FDM printers). (2) As they consist of a single piece, they require no assembly. (3) Since the movement is performed by deformation there is virtually no friction, no need for lubrication, and thus for maintenance.
+
+% Since the functionality of our metamaterial devices is only defined by the deformation inside the cell structures, the resulting mechanical function is not dependent on engineering fit and play between parts to ensure a smooth motion. On the contrary, our metamaterials offer a direct relationship between the geometry and material. This relationship can be computed by software tools to enable novice users to develop new mechanisms and devices---a privilege that is so far reserved for experts.
+
+% However, our metamaterial devices are also subject to limitations. Since metamaterial mechanisms only rely on deformation, they are unable to produce continuous rotation. If continuous rotation is required, metamaterial mechanisms can be complemented with a separate axle. Metamaterial Textures are intended to be used on objects where the exact shape is not a critical property, since transitioning between textures relies on compression. And lastly, since our digital mechanical metamaterials implement combinational circuits, they consequently lack loops, a clock, and memory, and are therefore limited to much simple computing devices.
+
+
 
 
 \section{Potential impact: two views}
-Here, we would like to discuss two aspects that we find particularly interesting about our work. One is that metamaterial devices do not simply mimic traditional devices, but leverage the benefits of 3D printing. Secondly, we believe that software tools and assembly-free designs combined with the availability of consumer-grade 3D printers enables many more (lay) people to invent future technology. 
+Here, we would like to discuss two aspects that we find particularly interesting about our work. One is that metamaterial devices do not simply mimic traditional devices, but leverage the benefits of 3D printing. Secondly, we believe that software tools and assembly-free designs combined with the availability of consumer-grade 3D printers enables many more (lay) people to help invent future technology. 
 
 \subsubsection{Not mimicking traditional devices}
 % We do not mimic traditional devices but leverage the advantage of 3D printing \todo{HOW?}
-While 3D printing is still on the rise \cite{Sclupteo2018}, for a technology that can arrange matter freely in space it is still very wide spread. We think that one of the reasons is that users at home as well as in industry often just mimic traditional devices. Using traditionally shaped mechanical parts, for example, is viable and multiple parts can even be printed in one process \cite{Cali2012}. We argue, however, that this does not make good use of the technological advancement, which 3D printers allow for.  
+While 3D printing is still on the rise \cite{Sclupteo2018}, for a technology that can arrange matter freely in space it is still not very wide spread. We think that one of the reasons is that users at home as well as in industry often just mimic traditional devices. 3D printing traditionally shaped mechanical parts (e.g, axles, sockets, etc.) is of course viable. Multiple parts can even be printed in one process \cite{Cali2012}. We argue, however, that this does not make good use of the technological advancement that 3D printers allow for.  
 
-With new technology, we should rethink how we design items to really leverage the technology. The work we presented in this thesis does rethink the design of devices. While the applications examples that illustrated the potential use of such metamaterial devices where rather traditional, the approach of using cell structures to achieve them is certainly not. We argue that our metamaterial-based approach leverages the benefits of 3D printing well, because the cell structures act like a framework, which in many cases eliminates the need for support structures
-\footnote{Recently, researchers even started focusing specifically on 3D-printable structures with directional stiffness control \cite{Martinez2018}} 
-and the cell structures act like springs. 
+With new technology, we should rethink how we design items to really leverage its benefits. The work we presented in this thesis does rethink the design of devices. While the application examples that illustrated the potential use of such metamaterial devices were rather traditional, the approach of using cell structures to achieve them is certainly not. We argue that our metamaterial-based approach leverages the benefits of 3D printing well, because the cell structures act like a framework, which in many cases eliminates the need for support structures\footnote{Recently, researchers even started focusing specifically on 3D-printable structures with directional stiffness control \cite{Martinez2018}.}. 
+% and the cell structures act like springs. 
 
-Considering the fabrication technology in the design process allows to expand the devices from, e.g., only the the door latch mechanism to fabricating the complete door including the mechanism. Going even further, we can imagine including the door with the latch mechanism connected by metamaterial hinges to the wall while printing the entire house. The walls can also consist of structures acting as acoustic dampers from outside noise or thermal insulators. We believe that such a future is possible if the technology and the design fit together.
+Considering the fabrication technology in the design process allows to expand the devices from, e.g., only the door latch mechanism to fabricating the complete door including the mechanism. Going even further, we can imagine printing a house where the door with the latch mechanism is printed with the walls, connecting them with metamaterial hinges. The walls can also consist of structures acting as acoustic dampers from outside noise or thermal insulators. We believe that such a future is possible if the technology and the design fit together.
 
 % Also, because our metamaterial structures are based on deformation, every edge in the structure acts like a spring---and 3D printing traditional mechanisms in an assembled state does not allow for tension.
 
@@ -32,38 +54,37 @@ While creating devices and mechanisms so far remained a privilege of experts onl
 
 Creating new devices typically consists of two phases, (1)~the design phase and (2)~the craft phase. The design phase involves the design of individual parts and their positioning with respect to each other in order to fulfil a function. The craft phase is concerned with the manufacturing and assembly of those parts. However, both phases usually require substantial knowledge and expertise with regards to fit, play, friction, etc. 
 
-The works presented in this thesis ease both phases in order to enable experts and novices to create new devices. Our metamaterial devices require no assembly and the manufacturing is offloaded to the 3D printer, which shields users from the craft phase. We support users in the design phase by providing interactive computational tools that help creating the geometry of the cell structures, which define the function of the device.
+The works presented in this thesis ease both phases in order to enable experts and novices to create new devices. Our metamaterial devices require no assembly and because the manufacturing is offloaded to the 3D printer, users are being shielded from the craft phase. We support users in the design phase by providing interactive computational tools that help creating the geometry of the cell structures, which define the function of the device.
 On a more abstract level, we believe that allowing even novice users to participate in the innovation of new devices will accelerate technological advancement. Potentially billions of people could invent devices and help push the boundaries of technology as compared to only a few experts and researchers. 
 
 
+\section{Open challenges}
 
-\section{Contribution}
+To expand the capabilities of metamaterial devices further, we see three main challenges that need to be solved. In this section, we refer to challenges that can be solved  in the near future (\textasciitilde{}2 years).
 
-With this thesis, we extend the research fields of metamaterials, digital fabrication, and 3D modelling tools by contributing a novel approach to creating interactive devices that do not rely on electronics, but their interactivity is defined by their material structure. Such metamaterial structures are a new genre that is of higher complexity and that exploits more degrees of freedom than previous work in this field, and that allow metamaterials to tackle problems they have traditionally not been able to address. Since the the entire device is defined by the architected cell structure of the material it consists of, we like to think that we blur the boundaries between materials and devices. Therefore, we see the main promise of this work in that it allows us to achieve a deeper integration between the structural and the mechanical functions of \textit{materials}.
+\subsubsection{3D printing technology \& materials}
+Intricate microstructures are still tricky to print. While lithography-based technologies, which fuse liquid or powder-based materials with light (SLA or SLS), work well for such structures as there is mostly no need for support structures, the material choice is very limited. Many materials for these 3D printers are soft, but not elastic, or tear too easily. We see, however, first sparks of interest in industry, which promises for a push in 3D printing technology for faster and cheaper manufacturing possibilities. For example, Adidas just released mass-customized sneakers with microstructured soles. They partnered with the 3D printing company Carbon\footnote{https://www.carbon3d.com/stories/rethinking-foam-carbons-lattice-innovation/} for fabrication. Carbon is actually the first resin curing printing technology to offer a truly elastic material, which is very promising. 
 
-On a more tangible level, we contribute different cell designs that play together to transform forces, perform simple computation, or change their outside structure. Moreover, we presented software tools that assist users in creating such devices. We also dug deeper into the structural constraints that cells exert when connected on a grid. This understanding enabled a computational design tool, that generates metamaterial mechanisms for the user---and is a promising approach for the future.
-
-% \todo{add: we contribute cell design, and software, and deeper understanding, ...}
-
-% \section{Open challenges}
-
-
-% \subsubsection{Benefits \& limitations}
-
-% Compared to traditional multi-part mechanisms, metamaterial devices offer several benefits. (1) The resulting devices consist of a single part. They can thus be created using particularly simple fabrication processes, such as single-material 3D printers (e.g., FDM printers). (2) As they consist of a single piece, they require no assembly. (3) Since the movement is performed by deformation there is virtually no friction, no need for lubrication, and thus for maintenance.
-
-% Since the functionality of our metamaterial devices is only defined by the deformation inside the cell structures, the resulting mechanical function is not dependent on engineering fit and play between parts to ensure a smooth motion. On the contrary, our metamaterials offer a direct relationship between the geometry and material. This relationship can be computed by software tools to enable novice users to develop new mechanisms and devices---a privilege that is so far reserved for experts.
-
-% However, our metamaterial devices are also subject to limitations. Since metamaterial mechanisms only rely on deformation, they are unable to produce continuous rotation. If continuous rotation is required, metamaterial mechanisms can be complemented with a separate axle. Metamaterial Textures are intended to be used on objects where the exact shape is not a critical property, since transitioning between textures relies on compression. And lastly, since our digital mechanical metamaterials implement combinational circuits, they consequently lack loops, a clock, and memory, and are therefore limited to much simple computing devices.
+\subsubsection{Sensing}
+While in this work the input for metamaterial devices was only mechanical motion input by humans, we think that sensing capabilities are an interesting challenge. 
+An interesting research perspective would be to investigate sensor cells to detect, e.g., light, motion, magnetic fields, moisture, gas, etc. 
+The sensed value needs to be converted into a mechanical input to the metamaterial device. 
+Moreover, sensor cells that can detect their state would enable closed-loop metamaterial devices.
 
 
-\section{Outlook \& open challenges}
+\subsubsection{Computer-controlled actuation}
+We want to extend this view to automatic actuation. Metamaterial cells, for example, could be fabricated from shape memory polymers. Another idea would be to coat them with conductive material such that they can be actuated by an electromagnetic field. Such approaches could be suitable to reset the bistable springs in our digital metamaterials or automatically change the state of metamaterial textures.   
 
-We think that the classic concept of metamaterials is an extremely interesting research perspective with much potential to advance technology. Being able to save material, create better insulators, reduce weight, redirect light, etc. will enable unforseen advances. We think that pushing such high-functioning metamaterials further by combining them with our concept of letting them perform mechanical functions will push these boundaries even more. A future metamaterial might not only be lightweight, but it can be lightweight and mechanically actuate a part. Future metamaterials might not only perform thermal control on space crafts, but steer it by changing their resistance at the same time---the rate of which is computed within the material itself.
 
-Some immediate future work will be necessary, such as developing metamaterial devices that have sensing capabilities. The sensed value can then be incorporated as an input value, which in this work was only mechanical motion input by humans. Furthermore, one can extend this view to automatic actuation. For example, metamaterial cells could be made from shape memory polymers. Another idea would be to coat them with conductive material such that they can be actuated by an electromagnetic field.  
+\section{Outlook}
 
-Another missing piece for making such advanced metamaterial devices a reality are efficient ways for their exploration. We believe that to explore such devices, we need to build computational tools that allow researchers to explore their novel cell designs quickly. One major goal is to enable the exploration of \textit{combinations} of topologically different cells efficiently and reliably in software. We see the largest promise in such \textit{heterogeneous mechanical metamaterials} as they ultimately enabled this work to push the boundaries of metamaterials. 
+We think that the classic concept of metamaterials is an extremely interesting research perspective with much potential to advance technology. Being able to save material, create better insulators, reduce weight, redirect light, etc. will enable unforseen technological advances. As a vision, which is 10+ years further out, we think that pushing such high-functioning metamaterials further by combining them with our concept of letting them perform mechanical functions will push these boundaries even more. A future metamaterial might not only be lightweight, but it can be lightweight \textit{and} mechanically actuate a part. Future metamaterials might not only perform thermal control on space crafts, but steer it by changing their resistance at the same time---the rate of which is computed within the material itself.
+
+So far, most metamaterial structures are tiling the same cell. Combining a cell structure with different parameters within a material is only a recent development. We think that combining topologically different cells is an important step to make in order to create such advanced metamaterials, as envisioned above. Ultimately, such \textit{heterogeneous mechanical metamaterials}---as we would like to call them---enabled our metamaterial devices. 
+
+A missing piece for making such advanced metamaterial devices a reality are efficient ways for their exploration. We believe that to explore such devices, we need to build computational tools that allow researchers to explore their novel cell designs quickly. A future software tool should allow users to upload novel structures and combine them on a grid. The software needs to automatically deduce the constraints of the structures to adapt them or generate transition structures. Such tools would foster research of metamaterials with all their potential drastically and accelerate technological advancement. 
+
+% One major goal is to enable the exploration of \textit{combinations} of topologically different cells efficiently and reliably in software. We see the largest promise in such \textit{heterogeneous mechanical metamaterials} as they ultimately enabled this work to push the boundaries of metamaterials. 
 
 % actuation, sensing
 % building a software framework that allows the quick exploration of heterogeneous mechanical metamaterials.

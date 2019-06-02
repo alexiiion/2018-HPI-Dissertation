@@ -83,7 +83,15 @@
 \RequirePackage{booktabs} % for much better looking tables
 % \RequirePackage[labelfont={sf,bf,small}, textfont={sf,small}, justification=RaggedRight, margin=0pt, figurewithin=section, tablewithin=section]{caption}
 
+
 % -- change alex --
+\RequirePackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 \RequirePackage[hang]{footmisc}
 \setlength{\footnotemargin}{0.5em}
 

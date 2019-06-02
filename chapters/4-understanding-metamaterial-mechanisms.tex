@@ -62,7 +62,7 @@ The example depicted in Figure \ref{fig:4-constraint-interaction} illustrates th
     \label{fig:5-large-search-space}}
 \end{figure}
 
-While this example only concerns with one specific scenario, the complete search space would be $2^{25} \approx 3*{10}^7$. We generalize this in Section~\ref{section:search-space} and show how we reduce the search space by several orders of magnitude.
+While this example only concerns with one specific scenario, the complete search space would be $2^{25} \approx 3\cdot {10}^7$. We generalize this in Section~\ref{section:search-space} and show how we reduce the search space by several orders of magnitude.
 
 
 \subsection{Abstract representation reduces the search space}
@@ -206,16 +206,16 @@ To simulate the deformation, we find a minimizer of $D$ with respect to the foll
 Note that we do not have to enforce that edges are parallel in shear cells or that rigid cells maintain their interior angles. These constraints are already built into the reduced representation and each state vector induces a valid cell layout. This constitutes another advantage over the direct approach where these constraints have to be taken into account explicitly.
 
 Unfortunately, the energy and the constraints are non-linear and non-convex. However, the constraints are only quadratic and they can be analytically differentiated. The energy $D$ can also be analytically differentiated albeit yielding more complex terms due to the calculation of angles from edge vectors.
-We solve the problem of minimizing D subject to C1-C4 by employing the non-linear interior point solver IPOPT \cite{Waechter2006}, which gives us a configuration for a specific handle position. To simulate the full deformation, we sample the desired handle path and find the correct configuration by solving the optimization problem starting from the previous configuration as an initial guess.
+We solve the problem of minimizing $D$ subject to C1-C4 by employing the non-linear interior point solver IPOPT \cite{Waechter2006}, which gives us a configuration for a specific handle position. To simulate the full deformation, we sample the desired handle path and find the correct configuration by solving the optimization problem starting from the previous configuration as an initial guess.
 
 
 \subsection{Invalid input}
 
 The range of the handle corner is limited by the structure of the mechanism, which is fixed by anchors. If a handle position outside this range is prescribed the optimization problem has no solution because C4 cannot be satisfied. To yield an approximate result even for these situations we try to find a handle position, which is close to the desired one but in the range of the handle. To this end we solve another optimization problem minimizing the distance of the updated handle position ${\widetilde{P}}_h$ to the prescribed one $P_h$:
 
-$$D\prime\left(x\right)=\left \| {\widetilde{P}}_h-P_h \right \|^2,$$
+$$D\prime \left(x\right)=\left \| {\widetilde{P}}_h-P_h \right \|^2,$$
 
-subject to the constraints C1-C3. The resulting configuration is one that is valid and places the handle close to the desired position. However, the solution represents only one valid configuration, which will not minimize D in general. We therefore optimize $D$ with respect to C1-C4 using the new handle constraint.
+subject to the constraints C1-C3. The resulting configuration is one that is valid and places the handle close to the desired position. However, the solution represents only one valid configuration, which will not minimize $D$ in general. We therefore optimize $D$ with respect to C1-C4 using the new handle constraint.
 
 
 \subsubsection{Evaluation}
@@ -238,14 +238,14 @@ We aim to alleviate the problem of finding suitable configuration of cells given
 
 Our algorithm takes a set of user-defined input and output paths as well as a rough shape of the desired device as input. Our algorithm aims to find a close-to-optimal fit between the motion of the mechanism and the user-defined paths. Generally, input paths are actuated (e.g., by users) and the mechanism transforms this motion to the output path. In context of the optimization, however, we do not need to differentiate between input and output paths but use them as a list of paths which a mechanism should be able to reproduce. As a first step in our algorithm, we automatically determine the positions of the anchors for the cell configuration based on the scale and direction of the paths. We then generate a mechanism that produces the desired motion. An overview of the algorithm is illustrated in Figure \ref{fig:13-optimization-overview}.
 
-Since the behavior of a mechanism is non-linear, we create cell configurations using stochastic optimization, specifically Simulated Annealing \cite{Ram1996, Kirkpatrick1983}. Instead of modifying the cell configuration directly, we modify the constraint graph, i.e., split and merge connected components until the algorithm converges. To speed up computation, we resort to a hierarchical approach where we first find an optimum configuration for scaled-down versions of the mechanism and use this configuration as seed for larger versions. The output of the algorithm is a cell configuration that produces the desired paths.
-
 \begin{figure} [!h]
     \centering
     \includegraphics[width=\textwidth]{chapters/understanding-metamaterial-mechanisms-FIG/13-optimization-overview.pdf}
     \caption[Short figure name.]{Overview of the process of automatically finding cell patterns given user-specified paths.
     \label{fig:13-optimization-overview}}
 \end{figure}
+
+Since the behavior of a mechanism is non-linear, we create cell configurations using stochastic optimization, specifically Simulated Annealing \cite{Ram1996, Kirkpatrick1983}. Instead of modifying the cell configuration directly, we modify the constraint graph, i.e., split and merge connected components until the algorithm converges. To speed up computation, we resort to a hierarchical approach where we first find an optimum configuration for scaled-down versions of the mechanism and use this configuration as seed for larger versions. The output of the algorithm is a cell configuration that produces the desired paths.
 
 
 \subsection{Input and representation}
@@ -282,7 +282,8 @@ Given a list of user-defined paths, any cell configuration $C$ will transform th
 
 $$\min_j{\sum_{i=0}^{m}{\omega_i \left| P_i-C_j \left( P_i \right) \right|.}}$$
 
-$\omega_i\in\left[0,1\right],\ \ i=0mωi≔1$ are user-defined weighting factor for the individual paths. In our implementation, we typically use equal weights for input and output path (i.e., 0.5 for 2 paths).
+$\omega_i\in\left[0,1\right],\ \ \sum_{i=0}^{m} \omega_i \mathrel{\mathop:}= 1$ 
+are user-defined weighting factor for the individual paths. In our implementation, we typically use equal weights for input and output path (i.e., 0.5 for 2 paths).
 
 A trivial approach to the problem would be to randomly sample cell configurations (i.e., switching cell types randomly) and choose the best fit between the user-defined paths and the paths the mechanism produces. This, however, is not feasible, as discussed in Section~\ref{section:search-space}, given the large number of possible cell configurations that yield similar movements or are rigid. 
 
@@ -418,6 +419,8 @@ We analyzed metamaterial mechanisms with respect to their topological constraint
 
 On a higher level, we think of our work as the first step towards what we like to call \textit{heterogenous mechanical metamaterials}. We define them as metamaterials that consist of \textit{different types} of cells. Most often metamaterials consist of cells that are topologically equivalent; all cells have the same function, but they can vary in parameter. Metamaterial mechanisms is one example of a material that consists of \textit{topologically different cells}. They exhibit interesting behavior yet the interactions between cells are hard to understand. In the future, we will go step-wise towards investigating more of these heterogenous metamaterials by creating generic tools that allow researchers to investigate combinations of different types of cells from related work. 
 
+
+\pagebreak
 
 \section{Appendix A: Enumerating all unique mechanisms}
 \label{appendix:unique-mechanisms}
